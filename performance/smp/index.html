@@ -1,0 +1,5252 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>優化多核處理器(SMP)下的Android程序 | Android官方培訓課程中文版(v0.9.4)</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.0.1">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../../best-security.html" />
+    
+    
+    <link rel="prev" href="../../performance/perf-jni/index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+    
+
+        
+    <div class="book" data-level="14.8" data-basepath="../.." data-revision="Wed Jul 29 2015 01:21:19 GMT+0800 (CST)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        序言
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="basics/index.html">
+            
+                
+                    <a href="../../basics/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Android入門基礎：從這裡開始
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="basics/firstapp/index.html">
+            
+                
+                    <a href="../../basics/firstapp/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        建立第一個App
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="basics/firstapp/creating-project.html">
+            
+                
+                    <a href="../../basics/firstapp/creating-project.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.1.</b>
+                        
+                        創建Android項目
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="basics/firstapp/running-app.html">
+            
+                
+                    <a href="../../basics/firstapp/running-app.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.2.</b>
+                        
+                        執行Android程序
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="basics/firstapp/building-ui.html">
+            
+                
+                    <a href="../../basics/firstapp/building-ui.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.3.</b>
+                        
+                        建立簡單的用戶界面
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="basics/firstapp/starting-activity.html">
+            
+                
+                    <a href="../../basics/firstapp/starting-activity.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.4.</b>
+                        
+                        啟動其他的Activity
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="basics/actionbar/index.html">
+            
+                
+                    <a href="../../basics/actionbar/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        添加ActionBar
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="basics/actionbar/setting-up.html">
+            
+                
+                    <a href="../../basics/actionbar/setting-up.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.1.</b>
+                        
+                        建立ActionBar
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="basics/actionbar/adding-buttons.html">
+            
+                
+                    <a href="../../basics/actionbar/adding-buttons.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.2.</b>
+                        
+                        添加Action按鈕
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="basics/actionbar/styling.html">
+            
+                
+                    <a href="../../basics/actionbar/styling.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.3.</b>
+                        
+                        自定義ActionBar的風格
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="basics/actionbar/overlaying.html">
+            
+                
+                    <a href="../../basics/actionbar/overlaying.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.4.</b>
+                        
+                        ActionBar的覆蓋層疊
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="basics/supporting-devices/index.html">
+            
+                
+                    <a href="../../basics/supporting-devices/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        兼容不同的設備
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="basics/supporting-devices/languages.html">
+            
+                
+                    <a href="../../basics/supporting-devices/languages.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.1.</b>
+                        
+                        適配不同的語言
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="basics/supporting-devices/screens.html">
+            
+                
+                    <a href="../../basics/supporting-devices/screens.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.2.</b>
+                        
+                        適配不同的屏幕
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="basics/supporting-devices/platforms.html">
+            
+                
+                    <a href="../../basics/supporting-devices/platforms.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.</b>
+                        
+                        適配不同的系統版本
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="basics/activity-lifecycle/index.html">
+            
+                
+                    <a href="../../basics/activity-lifecycle/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        管理Activity的生命週期
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="basics/activity-lifecycle/starting.html">
+            
+                
+                    <a href="../../basics/activity-lifecycle/starting.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.1.</b>
+                        
+                        啟動與銷燬Activity
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="basics/activity-lifecycle/pausing.html">
+            
+                
+                    <a href="../../basics/activity-lifecycle/pausing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.2.</b>
+                        
+                        暫停與恢復Activity
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="basics/activity-lifecycle/stopping.html">
+            
+                
+                    <a href="../../basics/activity-lifecycle/stopping.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.3.</b>
+                        
+                        停止與重啟Activity
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="basics/activity-lifecycle/recreating.html">
+            
+                
+                    <a href="../../basics/activity-lifecycle/recreating.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.4.</b>
+                        
+                        重新創建Activity
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="basics/fragments/index.html">
+            
+                
+                    <a href="../../basics/fragments/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        使用Fragment建立動態的UI
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="basics/fragments/creating.html">
+            
+                
+                    <a href="../../basics/fragments/creating.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.1.</b>
+                        
+                        創建一個Fragment
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="basics/fragments/fragment-ui.html">
+            
+                
+                    <a href="../../basics/fragments/fragment-ui.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.2.</b>
+                        
+                        建立靈活動態的UI
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="basics/fragments/communicating.html">
+            
+                
+                    <a href="../../basics/fragments/communicating.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.3.</b>
+                        
+                        Fragments之間的交互
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="basics/data-storage/index.html">
+            
+                
+                    <a href="../../basics/data-storage/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        數據保存
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="basics/data-storage/shared-preference.html">
+            
+                
+                    <a href="../../basics/data-storage/shared-preference.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.1.</b>
+                        
+                        保存到Preference
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="basics/data-storage/files.html">
+            
+                
+                    <a href="../../basics/data-storage/files.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.2.</b>
+                        
+                        保存到文件
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="basics/data-storage/database.html">
+            
+                
+                    <a href="../../basics/data-storage/database.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.3.</b>
+                        
+                        保存到數據庫
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="basics/intents/index.html">
+            
+                
+                    <a href="../../basics/intents/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        與其他應用的交互
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="basics/intents/sending.html">
+            
+                
+                    <a href="../../basics/intents/sending.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.1.</b>
+                        
+                        Intent的發送
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="basics/intents/result.html">
+            
+                
+                    <a href="../../basics/intents/result.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.2.</b>
+                        
+                        接收Activity返回的結果
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="basics/intents/filters.html">
+            
+                
+                    <a href="../../basics/intents/filters.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.3.</b>
+                        
+                        Intent過濾
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="building-content-sharing.html">
+            
+                
+                    <a href="../../building-content-sharing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Android分享操作
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="content-sharing/sharing/index.html">
+            
+                
+                    <a href="../../content-sharing/sharing/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        分享簡單的數據
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="content-sharing/sharing/send.html">
+            
+                
+                    <a href="../../content-sharing/sharing/send.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.</b>
+                        
+                        給其他App發送簡單的數據
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="content-sharing/sharing/receive.html">
+            
+                
+                    <a href="../../content-sharing/sharing/receive.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.2.</b>
+                        
+                        接收從其他App返回的數據
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="content-sharing/sharing/shareaction.html">
+            
+                
+                    <a href="../../content-sharing/sharing/shareaction.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.3.</b>
+                        
+                        給ActionBar增加分享功能
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="content-sharing/secure-file-sharing/index.html">
+            
+                
+                    <a href="../../content-sharing/secure-file-sharing/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        分享文件
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="content-sharing/secure-file-sharing/setup-sharing.html">
+            
+                
+                    <a href="../../content-sharing/secure-file-sharing/setup-sharing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.1.</b>
+                        
+                        建立文件分享
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="content-sharing/secure-file-sharing/sharing-file.html">
+            
+                
+                    <a href="../../content-sharing/secure-file-sharing/sharing-file.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.2.</b>
+                        
+                        分享文件
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="content-sharing/secure-file-sharing/request-file.html">
+            
+                
+                    <a href="../../content-sharing/secure-file-sharing/request-file.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.3.</b>
+                        
+                        請求分享一個文件
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="content-sharing/secure-file-sharing/retrieve-info.html">
+            
+                
+                    <a href="../../content-sharing/secure-file-sharing/retrieve-info.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.4.</b>
+                        
+                        獲取文件信息
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="content-sharing/beam-files/index.html">
+            
+                
+                    <a href="../../content-sharing/beam-files/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        使用NFC分享文件
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="content-sharing/beam-files/sending-files.html">
+            
+                
+                    <a href="../../content-sharing/beam-files/sending-files.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.1.</b>
+                        
+                        發送文件給其他設備
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="content-sharing/beam-files/receive-files.html">
+            
+                
+                    <a href="../../content-sharing/beam-files/receive-files.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.2.</b>
+                        
+                        接收其他設備的文件
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="building-multimedia.html">
+            
+                
+                    <a href="../../building-multimedia.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Android多媒體
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="multimedia/audio/index.html">
+            
+                
+                    <a href="../../multimedia/audio/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        管理音頻播放
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="multimedia/audio/volume-playback.html">
+            
+                
+                    <a href="../../multimedia/audio/volume-playback.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.1.</b>
+                        
+                        控制音量與音頻播放
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="multimedia/audio/audio-focus.html">
+            
+                
+                    <a href="../../multimedia/audio/audio-focus.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.2.</b>
+                        
+                        管理音頻焦點
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="multimedia/audio/audio-output.html">
+            
+                
+                    <a href="../../multimedia/audio/audio-output.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.3.</b>
+                        
+                        兼容音頻輸出設備
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="multimedia/camera/index.html">
+            
+                
+                    <a href="../../multimedia/camera/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        拍照
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="multimedia/camera/photobasics.html">
+            
+                
+                    <a href="../../multimedia/camera/photobasics.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.1.</b>
+                        
+                        簡單的拍照
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="multimedia/camera/videobasics.html">
+            
+                
+                    <a href="../../multimedia/camera/videobasics.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.2.</b>
+                        
+                        簡單的錄像
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="multimedia/camera/cameradirect.html">
+            
+                
+                    <a href="../../multimedia/camera/cameradirect.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.3.</b>
+                        
+                        控制相機硬件
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="multimedia/printing/index.html">
+            
+                
+                    <a href="../../multimedia/printing/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        打印
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="multimedia/printing/photos.html">
+            
+                
+                    <a href="../../multimedia/printing/photos.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.1.</b>
+                        
+                        打印照片
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="multimedia/printing/html-docs.html">
+            
+                
+                    <a href="../../multimedia/printing/html-docs.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.2.</b>
+                        
+                        打印HTML文檔
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="multimedia/printing/custom-docs.html">
+            
+                
+                    <a href="../../multimedia/printing/custom-docs.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.3.</b>
+                        
+                        打印自定義文檔
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="building-graphics.html">
+            
+                
+                    <a href="../../building-graphics.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Android圖像與動畫
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="graphics/displaying-bitmaps/index.html">
+            
+                
+                    <a href="../../graphics/displaying-bitmaps/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        高效顯示Bitmap
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="graphics/displaying-bitmaps/load-bitmap.html">
+            
+                
+                    <a href="../../graphics/displaying-bitmaps/load-bitmap.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.1.</b>
+                        
+                        高效加載大圖
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="graphics/displaying-bitmaps/process-bitmap.html">
+            
+                
+                    <a href="../../graphics/displaying-bitmaps/process-bitmap.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.2.</b>
+                        
+                        非UI線程處理Bitmap
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="graphics/displaying-bitmaps/cache-bitmap.html">
+            
+                
+                    <a href="../../graphics/displaying-bitmaps/cache-bitmap.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.3.</b>
+                        
+                        緩存Bitmap
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="graphics/displaying-bitmaps/manage-memory.html">
+            
+                
+                    <a href="../../graphics/displaying-bitmaps/manage-memory.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.4.</b>
+                        
+                        管理Bitmap的內存
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="graphics/displaying-bitmaps/display-bitmap.html">
+            
+                
+                    <a href="../../graphics/displaying-bitmaps/display-bitmap.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.5.</b>
+                        
+                        在UI上顯示Bitmap
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="graphics/opengl/index.html">
+            
+                
+                    <a href="../../graphics/opengl/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        使用OpenGL ES顯示圖像
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="graphics/opengl/environment.html">
+            
+                
+                    <a href="../../graphics/opengl/environment.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.1.</b>
+                        
+                        建立OpenGL ES的環境
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="graphics/opengl/shapes.html">
+            
+                
+                    <a href="../../graphics/opengl/shapes.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.2.</b>
+                        
+                        定義Shapes
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="graphics/opengl/draw.html">
+            
+                
+                    <a href="../../graphics/opengl/draw.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.3.</b>
+                        
+                        繪製Shapes
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="graphics/opengl/projection.html">
+            
+                
+                    <a href="../../graphics/opengl/projection.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.4.</b>
+                        
+                        運用投影與相機視圖
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="graphics/opengl/motion.html">
+            
+                
+                    <a href="../../graphics/opengl/motion.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.5.</b>
+                        
+                        添加移動
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="graphics/opengl/touch.html">
+            
+                
+                    <a href="../../graphics/opengl/touch.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.6.</b>
+                        
+                        響應觸摸事件
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="animations/index.html">
+            
+                
+                    <a href="../../animations/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        添加動畫
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="animations/crossfade.html">
+            
+                
+                    <a href="../../animations/crossfade.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.1.</b>
+                        
+                        View間漸變
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="animations/screen-slide.html">
+            
+                
+                    <a href="../../animations/screen-slide.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.2.</b>
+                        
+                        使用ViewPager實現屏幕滑動
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="animations/cardflip.html">
+            
+                
+                    <a href="../../animations/cardflip.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.3.</b>
+                        
+                        展示Card翻轉動畫
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.4" data-path="animations/zoom.html">
+            
+                
+                    <a href="../../animations/zoom.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.4.</b>
+                        
+                        縮放View
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.5" data-path="animations/layout.html">
+            
+                
+                    <a href="../../animations/layout.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.5.</b>
+                        
+                        佈局變更動畫
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="building-connectivity.html">
+            
+                
+                    <a href="../../building-connectivity.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Android網絡連接與雲服務
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="connectivity/connect-devices-wireless/index.html">
+            
+                
+                    <a href="../../connectivity/connect-devices-wireless/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        無線連接設備
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="connectivity/connect-devices-wireless/nsd.html">
+            
+                
+                    <a href="../../connectivity/connect-devices-wireless/nsd.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.1.</b>
+                        
+                        使用網絡服務發現
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="connectivity/connect-devices-wireless/wifi-direct.html">
+            
+                
+                    <a href="../../connectivity/connect-devices-wireless/wifi-direct.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.2.</b>
+                        
+                        使用WiFi建立P2P連接
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="connectivity/connect-devices-wireless/nsd-wifi-index.html">
+            
+                
+                    <a href="../../connectivity/connect-devices-wireless/nsd-wifi-index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.3.</b>
+                        
+                        使用WiFi P2P服務
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="connectivity/network-ops/index.html">
+            
+                
+                    <a href="../../connectivity/network-ops/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        執行網絡操作
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="connectivity/network-ops/connecting.html">
+            
+                
+                    <a href="../../connectivity/network-ops/connecting.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.1.</b>
+                        
+                        連接到網絡
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="connectivity/network-ops/managing.html">
+            
+                
+                    <a href="../../connectivity/network-ops/managing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.2.</b>
+                        
+                        管理網絡的使用情況
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="connectivity/network-ops/xml.html">
+            
+                
+                    <a href="../../connectivity/network-ops/xml.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.3.</b>
+                        
+                        解析XML數據
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="connectivity/efficient-downloads/index.html">
+            
+                
+                    <a href="../../connectivity/efficient-downloads/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        傳輸數據時避免消耗大量電量
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.1" data-path="connectivity/efficient-downloads/efficient-network-access.html">
+            
+                
+                    <a href="../../connectivity/efficient-downloads/efficient-network-access.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.1.</b>
+                        
+                        優化下載以高效地訪問網絡
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2" data-path="connectivity/efficient-downloads/regular-update.html">
+            
+                
+                    <a href="../../connectivity/efficient-downloads/regular-update.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.2.</b>
+                        
+                        最小化定期更新造成的影響
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.3" data-path="connectivity/efficient-downloads/redundant-redundant.html">
+            
+                
+                    <a href="../../connectivity/efficient-downloads/redundant-redundant.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.3.</b>
+                        
+                        重複的下載是冗餘的
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.4" data-path="connectivity/efficient-downloads/connectivity-patterns.html">
+            
+                
+                    <a href="../../connectivity/efficient-downloads/connectivity-patterns.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.4.</b>
+                        
+                        根據網絡連接類型來調整下載模式
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="connectivity/cloudsync/index.html">
+            
+                
+                    <a href="../../connectivity/cloudsync/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        雲同步
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.4.1" data-path="connectivity/cloudsync/backupapi.html">
+            
+                
+                    <a href="../../connectivity/cloudsync/backupapi.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.1.</b>
+                        
+                        使用備份API
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.2" data-path="connectivity/cloudsync/gcm.html">
+            
+                
+                    <a href="../../connectivity/cloudsync/gcm.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.2.</b>
+                        
+                        使用Google Cloud Messaging
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="connectivity/cloudsave/index.html">
+            
+                
+                    <a href="../../connectivity/cloudsave/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        解決雲同步的保存衝突
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="connectivity/sync-adapters/index.html">
+            
+                
+                    <a href="../../connectivity/sync-adapters/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        使用Sync Adapter傳輸數據
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.6.1" data-path="connectivity/sync-adapters/create-authenticator.html">
+            
+                
+                    <a href="../../connectivity/sync-adapters/create-authenticator.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.1.</b>
+                        
+                        創建Stub授權器
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.2" data-path="connectivity/sync-adapters/create-stub-provider.html">
+            
+                
+                    <a href="../../connectivity/sync-adapters/create-stub-provider.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.2.</b>
+                        
+                        創建Stub Content Provider
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.3" data-path="connectivity/sync-adapters/create-sync-adapter.html">
+            
+                
+                    <a href="../../connectivity/sync-adapters/create-sync-adapter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.3.</b>
+                        
+                        創建Sync Adpater
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6.4" data-path="connectivity/sync-adapters/running-sync-adapter.html">
+            
+                
+                    <a href="../../connectivity/sync-adapters/running-sync-adapter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.4.</b>
+                        
+                        執行Sync Adpater
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="connectivity/volley/index.html">
+            
+                
+                    <a href="../../connectivity/volley/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        使用Volley執行網絡數據傳輸
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.7.1" data-path="connectivity/volley/simple.html">
+            
+                
+                    <a href="../../connectivity/volley/simple.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.1.</b>
+                        
+                        發送簡單的網絡請求
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7.2" data-path="connectivity/volley/request-queue.html">
+            
+                
+                    <a href="../../connectivity/volley/request-queue.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.2.</b>
+                        
+                        建立請求隊列
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7.3" data-path="connectivity/volley/request.html">
+            
+                
+                    <a href="../../connectivity/volley/request.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.3.</b>
+                        
+                        創建標準的網絡請求
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7.4" data-path="connectivity/volley/request-custom.html">
+            
+                
+                    <a href="../../connectivity/volley/request-custom.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.4.</b>
+                        
+                        實現自定義的網絡請求
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="building-userinfo.html">
+            
+                
+                    <a href="../../building-userinfo.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Android聯繫人與位置信息
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="contacts-provider/index.html">
+            
+                
+                    <a href="../../contacts-provider/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        Android聯繫人信息
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="contacts-provider/retrieve-names.html">
+            
+                
+                    <a href="../../contacts-provider/retrieve-names.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.1.</b>
+                        
+                        獲取聯繫人列表
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="contacts-provider/retrieve-detail.html">
+            
+                
+                    <a href="../../contacts-provider/retrieve-detail.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.2.</b>
+                        
+                        獲取聯繫人詳情
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.3" data-path="contacts-provider/modify-data.html">
+            
+                
+                    <a href="../../contacts-provider/modify-data.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.3.</b>
+                        
+                        使用Intents修改聯繫人信息
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.4" data-path="contacts-provider/display-badge.html">
+            
+                
+                    <a href="../../contacts-provider/display-badge.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.4.</b>
+                        
+                        顯示聯繫人頭像
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="location/index.html">
+            
+                
+                    <a href="../../location/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        Android位置信息
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="location/retrieve-current.html">
+            
+                
+                    <a href="../../location/retrieve-current.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.1.</b>
+                        
+                        獲取最後可知位置
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.2" data-path="location/retrieve-location-updates.html">
+            
+                
+                    <a href="../../location/retrieve-location-updates.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.2.</b>
+                        
+                        獲取位置更新
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.3" data-path="location/display-address.html">
+            
+                
+                    <a href="../../location/display-address.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.3.</b>
+                        
+                        顯示位置地址
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.4" data-path="location/geofencing.html">
+            
+                
+                    <a href="../../location/geofencing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.4.</b>
+                        
+                        創建和監視地理圍欄
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="building-wearables.html">
+            
+                
+                    <a href="../../building-wearables.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Android可穿戴應用
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="wearables/notifications/index.html">
+            
+                
+                    <a href="../../wearables/notifications/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        賦予Notification可穿戴特性
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.1" data-path="wearables/notifications/creating.html">
+            
+                
+                    <a href="../../wearables/notifications/creating.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.1.</b>
+                        
+                        創建Notification
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.2" data-path="wearables/notifications/voice-input.html">
+            
+                
+                    <a href="../../wearables/notifications/voice-input.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.2.</b>
+                        
+                        在Notifcation中接收語音輸入
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.3" data-path="wearables/notifications/pages.html">
+            
+                
+                    <a href="../../wearables/notifications/pages.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.3.</b>
+                        
+                        為Notification添加顯示頁面
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.4" data-path="wearables/notifications/stacks.html">
+            
+                
+                    <a href="../../wearables/notifications/stacks.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.4.</b>
+                        
+                        以Stack的方式顯示Notifications
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="wearables/apps/index.html">
+            
+                
+                    <a href="../../wearables/apps/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        創建可穿戴的應用
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.2.1" data-path="wearables/apps/creating.html">
+            
+                
+                    <a href="../../wearables/apps/creating.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.1.</b>
+                        
+                        創建並運行可穿戴應用
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.2" data-path="wearables/apps/layouts.html">
+            
+                
+                    <a href="../../wearables/apps/layouts.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.2.</b>
+                        
+                        創建自定義的佈局
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.3" data-path="wearables/apps/voice.html">
+            
+                
+                    <a href="../../wearables/apps/voice.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.3.</b>
+                        
+                        添加語音功能
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.4" data-path="wearables/apps/packaging.html">
+            
+                
+                    <a href="../../wearables/apps/packaging.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.4.</b>
+                        
+                        打包可穿戴應用
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.5" data-path="wearables/apps/bt-debugging.html">
+            
+                
+                    <a href="../../wearables/apps/bt-debugging.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.5.</b>
+                        
+                        通過藍牙進行調試
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="wearables/ui/index.html">
+            
+                
+                    <a href="../../wearables/ui/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        創建自定義的UI
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.3.1" data-path="wearables/ui/layouts.html">
+            
+                
+                    <a href="../../wearables/ui/layouts.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.1.</b>
+                        
+                        定義Layouts
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3.2" data-path="wearables/ui/cards.html">
+            
+                
+                    <a href="../../wearables/ui/cards.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.2.</b>
+                        
+                        創建Card
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3.3" data-path="wearables/ui/lists.html">
+            
+                
+                    <a href="../../wearables/ui/lists.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.3.</b>
+                        
+                        創建List
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3.4" data-path="wearables/ui/2d-picker.html">
+            
+                
+                    <a href="../../wearables/ui/2d-picker.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.4.</b>
+                        
+                        創建2D Picker
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3.5" data-path="wearables/ui/confirm.html">
+            
+                
+                    <a href="../../wearables/ui/confirm.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.5.</b>
+                        
+                        創建確認界面
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3.6" data-path="wearables/ui/exit.html">
+            
+                
+                    <a href="../../wearables/ui/exit.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.6.</b>
+                        
+                        退出全屏的Activity
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="wearables/data-layer/index.html">
+            
+                
+                    <a href="../../wearables/data-layer/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                        發送並同步數據
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.4.1" data-path="wearables/data-layer/accessing.html">
+            
+                
+                    <a href="../../wearables/data-layer/accessing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.1.</b>
+                        
+                        訪問可穿戴數據層
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.2" data-path="wearables/data-layer/data-items.html">
+            
+                
+                    <a href="../../wearables/data-layer/data-items.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.2.</b>
+                        
+                        同步數據單元
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.3" data-path="wearables/data-layer/assets.html">
+            
+                
+                    <a href="../../wearables/data-layer/assets.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.3.</b>
+                        
+                        傳輸資源
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.4" data-path="wearables/data-layer/messages.html">
+            
+                
+                    <a href="../../wearables/data-layer/messages.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.4.</b>
+                        
+                        發送與接收消息
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4.5" data-path="wearables/data-layer/events.html">
+            
+                
+                    <a href="../../wearables/data-layer/events.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.5.</b>
+                        
+                        處理數據層的事件
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="wearables/watch-faces/index.html">
+            
+                
+                    <a href="../../wearables/watch-faces/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.</b>
+                        
+                        創建錶盤
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.5.1" data-path="wearables/watch-faces/designing.html">
+            
+                
+                    <a href="../../wearables/watch-faces/designing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.1.</b>
+                        
+                        設計錶盤
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5.2" data-path="wearables/watch-faces/service.html">
+            
+                
+                    <a href="../../wearables/watch-faces/service.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.2.</b>
+                        
+                        構建錶盤服務
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5.3" data-path="wearables/watch-faces/drawing.html">
+            
+                
+                    <a href="../../wearables/watch-faces/drawing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.3.</b>
+                        
+                        繪製錶盤
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5.4" data-path="wearables/watch-faces/information.html">
+            
+                
+                    <a href="../../wearables/watch-faces/information.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.4.</b>
+                        
+                        在錶盤上顯示信息
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5.5" data-path="wearables/watch-faces/configuration.html">
+            
+                
+                    <a href="../../wearables/watch-faces/configuration.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.5.</b>
+                        
+                        提供配置 Activity
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5.6" data-path="wearables/watch-faces/issues.html">
+            
+                
+                    <a href="../../wearables/watch-faces/issues.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.6.</b>
+                        
+                        定位常見的問題
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5.7" data-path="wearables/watch-faces/performance.html">
+            
+                
+                    <a href="../../wearables/watch-faces/performance.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.7.</b>
+                        
+                        優化性能和電池使用時間
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="wearables/location/wear-location-detection.html">
+            
+                
+                    <a href="../../wearables/location/wear-location-detection.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.6.</b>
+                        
+                        位置檢測
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="building-tv.html">
+            
+                
+                    <a href="../../building-tv.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        Android TV應用
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="tv/start/index.html">
+            
+                
+                    <a href="../../tv/start/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        創建TV應用
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" data-path="tv/start/start.html">
+            
+                
+                    <a href="../../tv/start/start.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.1.</b>
+                        
+                        創建TV應用的第一步
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.2" data-path="tv/start/hardware.html">
+            
+                
+                    <a href="../../tv/start/hardware.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.2.</b>
+                        
+                        處理TV硬件部分
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.3" data-path="tv/start/layouts.html">
+            
+                
+                    <a href="../../tv/start/layouts.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.3.</b>
+                        
+                        創建TV的佈局文件
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.4" data-path="tv/start/navigation.html">
+            
+                
+                    <a href="../../tv/start/navigation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.4.</b>
+                        
+                        創建TV的導航欄
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="tv/playback/index.html">
+            
+                
+                    <a href="../../tv/playback/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        創建TV播放應用
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.2.1" data-path="tv/playback/browse.html">
+            
+                
+                    <a href="../../tv/playback/browse.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.1.</b>
+                        
+                        創建目錄瀏覽器
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2.2" data-path="tv/playback/card.html">
+            
+                
+                    <a href="../../tv/playback/card.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.2.</b>
+                        
+                        提供一個Card視圖
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2.3" data-path="tv/playback/details.html">
+            
+                
+                    <a href="../../tv/playback/details.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.3.</b>
+                        
+                        創建詳情頁
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2.4" data-path="tv/playback/now-playing.html">
+            
+                
+                    <a href="../../tv/playback/now-playing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.4.</b>
+                        
+                        顯示正在播放卡片
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="tv/discovery/index.html">
+            
+                
+                    <a href="../../tv/discovery/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                        幫助用戶在TV上探索內容
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.3.1" data-path="tv/discovery/recommendations.html">
+            
+                
+                    <a href="../../tv/discovery/recommendations.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.1.</b>
+                        
+                        TV上的推薦內容
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3.2" data-path="tv/discovery/searchable.html">
+            
+                
+                    <a href="../../tv/discovery/searchable.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.2.</b>
+                        
+                        使得TV App能夠被搜索
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3.3" data-path="tv/discovery/in-app-search.html">
+            
+                
+                    <a href="../../tv/discovery/in-app-search.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.3.</b>
+                        
+                        使用TV應用進行搜索
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="tv/games/index.html">
+            
+                
+                    <a href="../../tv/games/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                        創建TV遊戲應用
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="tv/tif/index.html">
+            
+                
+                    <a href="../../tv/tif/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.</b>
+                        
+                        創建TV直播應用
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="tv/publishing/checklist.html">
+            
+                
+                    <a href="../../tv/publishing/checklist.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.</b>
+                        
+                        TV Apps Checklist
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="enterprise/index.html">
+            
+                
+                    <a href="../../enterprise/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        Android企業級應用
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1" data-path="enterprise/app-compatibility.html">
+            
+                
+                    <a href="../../enterprise/app-compatibility.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        Ensuring Compatibility with Managed Profiles
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="enterprise/app-restrictions.html">
+            
+                
+                    <a href="../../enterprise/app-restrictions.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                        Implementing App Restrictions
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="enterprise/work-policy-ctrl.html">
+            
+                
+                    <a href="../../enterprise/work-policy-ctrl.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                        Building a Work Policy Controller
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="best-ux.html">
+            
+                
+                    <a href="../../best-ux.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Android交互設計
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.1" data-path="ux/design-nav/index.html">
+            
+                
+                    <a href="../../ux/design-nav/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.</b>
+                        
+                        設計高效的導航
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.1.1" data-path="ux/design-nav/screen-planning.html">
+            
+                
+                    <a href="../../ux/design-nav/screen-planning.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.1.</b>
+                        
+                        規劃屏幕界面與他們之間的關係
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.2" data-path="ux/design-nav/multi-sizes.html">
+            
+                
+                    <a href="../../ux/design-nav/multi-sizes.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.2.</b>
+                        
+                        為多種大小的屏幕進行規劃
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.3" data-path="ux/design-nav/descendant-lateral.html">
+            
+                
+                    <a href="../../ux/design-nav/descendant-lateral.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.3.</b>
+                        
+                        提供向下和橫向導航
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.4" data-path="ux/design-nav/ancestral-temporal.html">
+            
+                
+                    <a href="../../ux/design-nav/ancestral-temporal.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.4.</b>
+                        
+                        提供向上和歷史導航
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.1.5" data-path="ux/design-nav/wireframing.html">
+            
+                
+                    <a href="../../ux/design-nav/wireframing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.5.</b>
+                        
+                        綜合：設計樣例 App
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="ux/implement-nav/index.html">
+            
+                
+                    <a href="../../ux/implement-nav/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.</b>
+                        
+                        實現高效的導航
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.2.1" data-path="ux/implement-nav/lateral.html">
+            
+                
+                    <a href="../../ux/implement-nav/lateral.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.1.</b>
+                        
+                        使用Tabs創建Swipe視圖
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2.2" data-path="ux/implement-nav/nav-drawer.html">
+            
+                
+                    <a href="../../ux/implement-nav/nav-drawer.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.2.</b>
+                        
+                        創建抽屜導航
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2.3" data-path="ux/implement-nav/ancestral.html">
+            
+                
+                    <a href="../../ux/implement-nav/ancestral.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.3.</b>
+                        
+                        提供向上的導航
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2.4" data-path="ux/implement-nav/temporal.html">
+            
+                
+                    <a href="../../ux/implement-nav/temporal.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.4.</b>
+                        
+                        提供向後的導航
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2.5" data-path="ux/implement-nav/descendant.html">
+            
+                
+                    <a href="../../ux/implement-nav/descendant.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.5.</b>
+                        
+                        實現向下的導航
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="ux/notify-user/index.html">
+            
+                
+                    <a href="../../ux/notify-user/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.3.</b>
+                        
+                        通知提示用戶
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.3.1" data-path="ux/notify-user/build-notification.html">
+            
+                
+                    <a href="../../ux/notify-user/build-notification.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.3.1.</b>
+                        
+                        建立Notification
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3.2" data-path="ux/notify-user/nav.html">
+            
+                
+                    <a href="../../ux/notify-user/nav.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.3.2.</b>
+                        
+                        當啟動Activity時保留導航
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3.3" data-path="ux/notify-user/update-notification.html">
+            
+                
+                    <a href="../../ux/notify-user/update-notification.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.3.3.</b>
+                        
+                        更新Notification
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3.4" data-path="ux/notify-user/expand-notification.html">
+            
+                
+                    <a href="../../ux/notify-user/expand-notification.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.3.4.</b>
+                        
+                        使用BigView風格
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3.5" data-path="ux/notify-user/progess-notification.html">
+            
+                
+                    <a href="../../ux/notify-user/progess-notification.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.3.5.</b>
+                        
+                        顯示Notification進度
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="ux/search/index.html">
+            
+                
+                    <a href="../../ux/search/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.4.</b>
+                        
+                        增加搜索功能
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.4.1" data-path="ux/search/setup.html">
+            
+                
+                    <a href="../../ux/search/setup.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.4.1.</b>
+                        
+                        建立搜索界面
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4.2" data-path="ux/search/search.html">
+            
+                
+                    <a href="../../ux/search/search.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.4.2.</b>
+                        
+                        保存並搜索數據
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4.3" data-path="ux/search/back-compat.html">
+            
+                
+                    <a href="../../ux/search/back-compat.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.4.3.</b>
+                        
+                        保持向下兼容
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="ux/app-indexing/index.html">
+            
+                
+                    <a href="../../ux/app-indexing/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.5.</b>
+                        
+                        使得你的App內容可被Google搜索
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.5.1" data-path="ux/app-indexing/deep-linking.html">
+            
+                
+                    <a href="../../ux/app-indexing/deep-linking.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.5.1.</b>
+                        
+                        為App內容開啟深度鏈接
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5.2" data-path="ux/app-indexing/enable-app-indexing.html">
+            
+                
+                    <a href="../../ux/app-indexing/enable-app-indexing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.5.2.</b>
+                        
+                        為索引指定App內容
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="best-ui.html">
+            
+                
+                    <a href="../../best-ui.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        Android界面設計
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="11.1" data-path="ui/multiscreen/index.html">
+            
+                
+                    <a href="../../ui/multiscreen/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.</b>
+                        
+                        為多屏幕設計
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="11.1.1" data-path="ui/multiscreen/screen-sizes.html">
+            
+                
+                    <a href="../../ui/multiscreen/screen-sizes.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.1.</b>
+                        
+                        兼容不同的屏幕大小
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.1.2" data-path="ui/multiscreen/screen-desities.html">
+            
+                
+                    <a href="../../ui/multiscreen/screen-desities.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.2.</b>
+                        
+                        兼容不同的屏幕密度
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.1.3" data-path="ui/multiscreen/adapt-ui.html">
+            
+                
+                    <a href="../../ui/multiscreen/adapt-ui.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.3.</b>
+                        
+                        實現可適應的UI
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="ui/custom-view/index.html">
+            
+                
+                    <a href="../../ui/custom-view/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.2.</b>
+                        
+                        創建自定義View
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="11.2.1" data-path="ui/custom-view/create-view.html">
+            
+                
+                    <a href="../../ui/custom-view/create-view.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.2.1.</b>
+                        
+                        創建自定義的View類
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2.2" data-path="ui/custom-view/custom-draw.html">
+            
+                
+                    <a href="../../ui/custom-view/custom-draw.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.2.2.</b>
+                        
+                        實現自定義View的繪製
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2.3" data-path="ui/custom-view/make-interactive.html">
+            
+                
+                    <a href="../../ui/custom-view/make-interactive.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.2.3.</b>
+                        
+                        使得View可交互
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2.4" data-path="ui/custom-view/optimize-view.html">
+            
+                
+                    <a href="../../ui/custom-view/optimize-view.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.2.4.</b>
+                        
+                        優化自定義View
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="ui/backward-compatible-ui/index.html">
+            
+                
+                    <a href="../../ui/backward-compatible-ui/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.3.</b>
+                        
+                        創建向後兼容的UI
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="11.3.1" data-path="ui/backward-compatible-ui/abstract.html">
+            
+                
+                    <a href="../../ui/backward-compatible-ui/abstract.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.3.1.</b>
+                        
+                        抽象新的APIs
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3.2" data-path="ui/backward-compatible-ui/new-impl.html">
+            
+                
+                    <a href="../../ui/backward-compatible-ui/new-impl.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.3.2.</b>
+                        
+                        代理至新的APIs
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3.3" data-path="ui/backward-compatible-ui/older-impl.html">
+            
+                
+                    <a href="../../ui/backward-compatible-ui/older-impl.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.3.3.</b>
+                        
+                        使用舊的APIs實現新API的效果
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3.4" data-path="ui/backward-compatible-ui/using-component.html">
+            
+                
+                    <a href="../../ui/backward-compatible-ui/using-component.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.3.4.</b>
+                        
+                        使用版本敏感的組件
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="ui/accessibility/index.html">
+            
+                
+                    <a href="../../ui/accessibility/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.4.</b>
+                        
+                        實現輔助功能
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="11.4.1" data-path="ui/accessibility/accessible-app.html">
+            
+                
+                    <a href="../../ui/accessibility/accessible-app.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.4.1.</b>
+                        
+                        開發輔助程序
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4.2" data-path="ui/accessibility/accessible-service.html">
+            
+                
+                    <a href="../../ui/accessibility/accessible-service.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.4.2.</b>
+                        
+                        開發輔助服務
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="ui/system-ui/index.html">
+            
+                
+                    <a href="../../ui/system-ui/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.5.</b>
+                        
+                        管理系統UI
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="11.5.1" data-path="ui/system-ui/dim.html">
+            
+                
+                    <a href="../../ui/system-ui/dim.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.5.1.</b>
+                        
+                        淡化系統Bar
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5.2" data-path="ui/system-ui/hide-ui.html">
+            
+                
+                    <a href="../../ui/system-ui/hide-ui.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.5.2.</b>
+                        
+                        隱藏系統Bar
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5.3" data-path="ui/system-ui/hide-nav.html">
+            
+                
+                    <a href="../../ui/system-ui/hide-nav.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.5.3.</b>
+                        
+                        隱藏導航Bar
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5.4" data-path="ui/system-ui/immersive.html">
+            
+                
+                    <a href="../../ui/system-ui/immersive.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.5.4.</b>
+                        
+                        全屏沉浸式應用
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5.5" data-path="ui/system-ui/visibility.html">
+            
+                
+                    <a href="../../ui/system-ui/visibility.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.5.5.</b>
+                        
+                        響應UI可見性的變化
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="11.6" data-path="material/index.html">
+            
+                
+                    <a href="../../material/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.6.</b>
+                        
+                        創建使用Material Design的應用
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="11.6.1" data-path="material/get-started.html">
+            
+                
+                    <a href="../../material/get-started.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.6.1.</b>
+                        
+                        開始使用Material Design
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.6.2" data-path="material/theme.html">
+            
+                
+                    <a href="../../material/theme.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.6.2.</b>
+                        
+                        使用Material的主題
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.6.3" data-path="material/lists-cards.html">
+            
+                
+                    <a href="../../material/lists-cards.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.6.3.</b>
+                        
+                        創建Lists與Cards
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.6.4" data-path="material/shadows-clipping.html">
+            
+                
+                    <a href="../../material/shadows-clipping.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.6.4.</b>
+                        
+                        定義Shadows與Clipping視圖
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.6.5" data-path="material/drawables.html">
+            
+                
+                    <a href="../../material/drawables.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.6.5.</b>
+                        
+                        使用Drawables
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.6.6" data-path="material/animations.html">
+            
+                
+                    <a href="../../material/animations.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.6.6.</b>
+                        
+                        自定義動畫
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.6.7" data-path="material/compatibility.html">
+            
+                
+                    <a href="../../material/compatibility.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.6.7.</b>
+                        
+                        維護兼容性
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="best-user-input.html">
+            
+                
+                    <a href="../../best-user-input.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        Android用戶輸入
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.1" data-path="input/gestures/index.html">
+            
+                
+                    <a href="../../input/gestures/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                        使用觸摸手勢
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.1.1" data-path="input/gestures/detector.html">
+            
+                
+                    <a href="../../input/gestures/detector.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.1.</b>
+                        
+                        檢測常用的手勢
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.1.2" data-path="input/gestures/movement.html">
+            
+                
+                    <a href="../../input/gestures/movement.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.2.</b>
+                        
+                        跟蹤手勢移動
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.1.3" data-path="input/gestures/scroll.html">
+            
+                
+                    <a href="../../input/gestures/scroll.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.3.</b>
+                        
+                        滾動手勢動畫
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.1.4" data-path="input/gestures/multi.html">
+            
+                
+                    <a href="../../input/gestures/multi.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.4.</b>
+                        
+                        處理多點觸控手勢
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.1.5" data-path="input/gestures/scale.html">
+            
+                
+                    <a href="../../input/gestures/scale.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.5.</b>
+                        
+                        拖拽與縮放
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.1.6" data-path="input/gestures/viewgroup.html">
+            
+                
+                    <a href="../../input/gestures/viewgroup.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.6.</b>
+                        
+                        管理ViewGroup中的觸摸事件
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="input/keyboard-input/index.html">
+            
+                
+                    <a href="../../input/keyboard-input/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                        處理鍵盤輸入
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.2.1" data-path="input/keyboard-input/type.html">
+            
+                
+                    <a href="../../input/keyboard-input/type.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.1.</b>
+                        
+                        指定輸入法類型
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2.2" data-path="input/keyboard-input/visibility.html">
+            
+                
+                    <a href="../../input/keyboard-input/visibility.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.2.</b>
+                        
+                        處理輸入法可見性
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2.3" data-path="input/keyboard-input/navigation.html">
+            
+                
+                    <a href="../../input/keyboard-input/navigation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.3.</b>
+                        
+                        支持鍵盤導航
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2.4" data-path="input/keyboard-input/commands.html">
+            
+                
+                    <a href="../../input/keyboard-input/commands.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.4.</b>
+                        
+                        處理按鍵動作
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="input/game-controller/index.html">
+            
+                
+                    <a href="../../input/game-controller/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.</b>
+                        
+                        支持遊戲控制器
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.3.1" data-path="input/game-controller/controller-inputs.html">
+            
+                
+                    <a href="../../input/game-controller/controller-inputs.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.1.</b>
+                        
+                        處理控制器輸入動作
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3.2" data-path="input/game-controller/compatibility.html">
+            
+                
+                    <a href="../../input/game-controller/compatibility.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.2.</b>
+                        
+                        在不同的 Android 系統版本支持控制器
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3.3" data-path="input/game-controller/multi-controller.html">
+            
+                
+                    <a href="../../input/game-controller/multi-controller.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.3.</b>
+                        
+                        支持多個控制器
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="best-background.html">
+            
+                
+                    <a href="../../best-background.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        Android後臺任務
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.1" data-path="background-jobs/run-background-service/index.html">
+            
+                
+                    <a href="../../background-jobs/run-background-service/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.</b>
+                        
+                        在IntentService中執行後臺任務
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.1.1" data-path="background-jobs/run-background-service/create-service.html">
+            
+                
+                    <a href="../../background-jobs/run-background-service/create-service.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.1.</b>
+                        
+                        創建IntentService
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13.1.2" data-path="background-jobs/run-background-service/send-request.html">
+            
+                
+                    <a href="../../background-jobs/run-background-service/send-request.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.2.</b>
+                        
+                        發送工作任務到IntentService
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13.1.3" data-path="background-jobs/run-background-service/report-status.html">
+            
+                
+                    <a href="../../background-jobs/run-background-service/report-status.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.3.</b>
+                        
+                        報告後臺任務執行狀態
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13.2" data-path="background-jobs/load-data-background/index.html">
+            
+                
+                    <a href="../../background-jobs/load-data-background/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.</b>
+                        
+                        使用CursorLoader在後臺加載數據
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.2.1" data-path="background-jobs/load-data-background/setup-loader.html">
+            
+                
+                    <a href="../../background-jobs/load-data-background/setup-loader.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.1.</b>
+                        
+                        使用CursorLoader執行查詢任務
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13.2.2" data-path="background-jobs/load-data-background/handle-result.html">
+            
+                
+                    <a href="../../background-jobs/load-data-background/handle-result.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.2.</b>
+                        
+                        處理CursorLoader查詢的結果
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13.3" data-path="background-jobs/scheduling/index.html">
+            
+                
+                    <a href="../../background-jobs/scheduling/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.3.</b>
+                        
+                        管理設備的喚醒狀態
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.3.1" data-path="background-jobs/scheduling/wake-lock.html">
+            
+                
+                    <a href="../../background-jobs/scheduling/wake-lock.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.3.1.</b>
+                        
+                        保持設備的喚醒
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13.3.2" data-path="background-jobs/scheduling/alarms.html">
+            
+                
+                    <a href="../../background-jobs/scheduling/alarms.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.3.2.</b>
+                        
+                        制定重複定時的任務
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="best-performance.html">
+            
+                
+                    <a href="../../best-performance.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        Android性能優化
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="14.1" data-path="performance/memory.html">
+            
+                
+                    <a href="../../performance/memory.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.1.</b>
+                        
+                        管理應用的內存
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.2" data-path="performance/performance-tips.html">
+            
+                
+                    <a href="../../performance/performance-tips.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.2.</b>
+                        
+                        代碼性能優化建議
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.3" data-path="performance/improving-layouts/index.html">
+            
+                
+                    <a href="../../performance/improving-layouts/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.3.</b>
+                        
+                        提升Layout的性能
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="14.3.1" data-path="performance/improving-layouts/optimizing-layout.html">
+            
+                
+                    <a href="../../performance/improving-layouts/optimizing-layout.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.3.1.</b>
+                        
+                        優化layout的層級
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.3.2" data-path="performance/improving-layouts/reuse-layouts.html">
+            
+                
+                    <a href="../../performance/improving-layouts/reuse-layouts.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.3.2.</b>
+                        
+                        使用include標籤重用layouts
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.3.3" data-path="performance/improving-layouts/loading-ondemand.html">
+            
+                
+                    <a href="../../performance/improving-layouts/loading-ondemand.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.3.3.</b>
+                        
+                        按需加載視圖
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.3.4" data-path="performance/improving-layouts/smooth-scrolling.html">
+            
+                
+                    <a href="../../performance/improving-layouts/smooth-scrolling.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.3.4.</b>
+                        
+                        使得ListView滑動順暢
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="14.4" data-path="performance/monitor-device-state/index.html">
+            
+                
+                    <a href="../../performance/monitor-device-state/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.</b>
+                        
+                        優化電池壽命
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="14.4.1" data-path="performance/monitor-device-state/battery-monitor.html">
+            
+                
+                    <a href="../../performance/monitor-device-state/battery-monitor.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.1.</b>
+                        
+                        監測電量與充電狀態
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.4.2" data-path="performance/monitor-device-state/docking-monitor.html">
+            
+                
+                    <a href="../../performance/monitor-device-state/docking-monitor.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.2.</b>
+                        
+                        判斷與監測Docking狀態
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.4.3" data-path="performance/monitor-device-state/connectivity-monitor.html">
+            
+                
+                    <a href="../../performance/monitor-device-state/connectivity-monitor.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.3.</b>
+                        
+                        判斷與監測網絡連接狀態
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.4.4" data-path="performance/monitor-device-state/manifest-receivers.html">
+            
+                
+                    <a href="../../performance/monitor-device-state/manifest-receivers.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.4.</b>
+                        
+                        根據需要操作Broadcast接受者
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="14.5" data-path="performance/multi-threads/index.html">
+            
+                
+                    <a href="../../performance/multi-threads/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.5.</b>
+                        
+                        多線程操作
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="14.5.1" data-path="performance/multi-threads/define-runnable.html">
+            
+                
+                    <a href="../../performance/multi-threads/define-runnable.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.5.1.</b>
+                        
+                        在一個線程中執行一段特定的代碼
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.5.2" data-path="performance/multi-threads/create-threadpool.html">
+            
+                
+                    <a href="../../performance/multi-threads/create-threadpool.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.5.2.</b>
+                        
+                        為多線程創建線程池
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.5.3" data-path="performance/multi-threads/run-code.html">
+            
+                
+                    <a href="../../performance/multi-threads/run-code.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.5.3.</b>
+                        
+                        啟動與停止線程池中的線程
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.5.4" data-path="performance/multi-threads/communicate-ui.html">
+            
+                
+                    <a href="../../performance/multi-threads/communicate-ui.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.5.4.</b>
+                        
+                        與UI線程通信
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="14.6" data-path="performance/perf-anr/index.html">
+            
+                
+                    <a href="../../performance/perf-anr/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.6.</b>
+                        
+                        避免出現程序無響應ANR
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.7" data-path="performance/perf-jni/index.html">
+            
+                
+                    <a href="../../performance/perf-jni/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.7.</b>
+                        
+                        JNI使用指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="14.8" data-path="performance/smp/index.html">
+            
+                
+                    <a href="../../performance/smp/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.8.</b>
+                        
+                        優化多核處理器(SMP)下的Android程序
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="best-security.html">
+            
+                
+                    <a href="../../best-security.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        Android安全與隱私
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="15.1" data-path="security/security-tips.html">
+            
+                
+                    <a href="../../security/security-tips.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.1.</b>
+                        
+                        Security Tips
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15.2" data-path="security/security-ssl.html">
+            
+                
+                    <a href="../../security/security-ssl.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.2.</b>
+                        
+                        使用HTTPS與SSL
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15.3" data-path="security/security-gms-provider.html">
+            
+                
+                    <a href="../../security/security-gms-provider.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.3.</b>
+                        
+                        為防止SSL漏洞而更新Security
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15.4" data-path="security/device-management-policy.html">
+            
+                
+                    <a href="../../security/device-management-policy.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.4.</b>
+                        
+                        使用設備管理條例增強安全性
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="best-testing.html">
+            
+                
+                    <a href="../../best-testing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                        Android測試程序
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="16.1" data-path="testing/activity-testing/index.html">
+            
+                
+                    <a href="../../testing/activity-testing/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.1.</b>
+                        
+                        測試你的Activity
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="16.1.1" data-path="testing/activity-testing/prepare-activity-testing.html">
+            
+                
+                    <a href="../../testing/activity-testing/prepare-activity-testing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.1.1.</b>
+                        
+                        建立測試環境
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16.1.2" data-path="testing/activity-testing/activity-basic-testing.html">
+            
+                
+                    <a href="../../testing/activity-testing/activity-basic-testing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.1.2.</b>
+                        
+                        創建與執行測試用例
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16.1.3" data-path="testing/activity-testing/activity-ui-testing.html">
+            
+                
+                    <a href="../../testing/activity-testing/activity-ui-testing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.1.3.</b>
+                        
+                        測試UI組件
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16.1.4" data-path="testing/activity-testing/activity-unit-testing.html">
+            
+                
+                    <a href="../../testing/activity-testing/activity-unit-testing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.1.4.</b>
+                        
+                        創建單元測試
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16.1.5" data-path="testing/activity-testing/activity-function-testing.html">
+            
+                
+                    <a href="../../testing/activity-testing/activity-function-testing.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.1.5.</b>
+                        
+                        創建功能測試
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >Android官方培訓課程中文版(v0.9.4)</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="smp-symmetric-multi-processor-primer-for-android">SMP(Symmetric Multi-Processor) Primer for Android</h1>
+<blockquote>
+<p>&#x7DE8;&#x5BEB;:<a href="https://github.com/kesenhoo" target="_blank">kesenhoo</a> - &#x539F;&#x6587;:<a href="http://developer.android.com/training/articles/smp.html" target="_blank">http://developer.android.com/training/articles/smp.html</a></p>
+</blockquote>
+<p>&#x5F9E;Android 3.0&#x958B;&#x59CB;&#xFF0C;&#x7CFB;&#x7D71;&#x91DD;&#x5C0D;&#x591A;&#x6838;CPU&#x67B6;&#x69CB;&#x7684;&#x6A5F;&#x5668;&#x505A;&#x4E86;&#x512A;&#x5316;&#x652F;&#x6301;&#x3002;&#x9019;&#x4EFD;&#x6587;&#x6A94;&#x4ECB;&#x7D39;&#x4E86;&#x91DD;&#x5C0D;&#x591A;&#x6838;&#x7CFB;&#x7D71;&#x61C9;&#x8A72;&#x5982;&#x4F55;&#x7DE8;&#x5BEB;C&#xFF0C;C++&#x4EE5;&#x53CA;Java&#x7A0B;&#x5E8F;&#x3002;&#x9019;&#x88E1;&#x53EA;&#x662F;&#x4F5C;&#x70BA;Android&#x61C9;&#x7528;&#x958B;&#x767C;&#x8005;&#x7684;&#x5165;&#x9580;&#x6559;&#x7A0B;&#xFF0C;&#x4E26;&#x4E0D;&#x6703;&#x6DF1;&#x5165;&#x8A0E;&#x8AD6;&#x9019;&#x500B;&#x8A71;&#x984C;&#xFF0C;&#x4E26;&#x4E14;&#x6211;&#x5011;&#x6703;&#x628A;&#x8A0E;&#x8AD6;&#x7BC4;&#x570D;&#x96C6;&#x4E2D;&#x5728;ARM&#x67B6;&#x69CB;&#x7684;CPU&#x4E0A;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x4E26;&#x6C92;&#x6709;&#x6642;&#x9593;&#x5B78;&#x7FD2;&#x6574;&#x7BC7;&#x6587;&#x7AE0;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8DF3;&#x904E;&#x524D;&#x9762;&#x7684;&#x7406;&#x8AD6;&#x90E8;&#x5206;&#xFF0C;&#x76F4;&#x63A5;&#x67E5;&#x770B;&#x5BE6;&#x8E10;&#x90E8;&#x5206;&#x3002;&#x4F46;&#x662F;&#x6211;&#x5011;&#x4E26;&#x4E0D;&#x5EFA;&#x8B70;&#x9019;&#x6A23;&#x505A;&#x3002;</p>
+<h2 id="0-%E7%B0%A1%E8%A6%81%E4%BB%8B%E7%B4%B9">0)&#x7C21;&#x8981;&#x4ECB;&#x7D39;</h2>
+<p><strong>SMP</strong> &#x7684;&#x5168;&#x7A31;&#x662F;&#x201C;<strong>Symmetric Multi-Processor</strong>&#x201D;&#x3002; &#x5B83;&#x8868;&#x793A;&#x7684;&#x662F;&#x4E00;&#x7A2E;&#x96D9;&#x6838;&#x6216;&#x8005;&#x591A;&#x6838;CPU&#x7684;&#x8A2D;&#x8A08;&#x67B6;&#x69CB;&#x3002;&#x5728;&#x5E7E;&#x5E74;&#x524D;&#xFF0C;&#x6240;&#x6709;&#x7684;Android&#x8A2D;&#x5099;&#x90FD;&#x9084;&#x662F;&#x55AE;&#x6838;&#x7684;&#x3002;</p>
+<p>&#x5927;&#x591A;&#x6578;&#x7684;Android&#x8A2D;&#x5099;&#x5DF2;&#x7D93;&#x6709;&#x4E86;&#x591A;&#x500B;CPU&#xFF0C;&#x4F46;&#x662F;&#x901A;&#x5E38;&#x4F86;&#x8AAA;&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x500B;CPU&#x8CA0;&#x8CAC;&#x57F7;&#x884C;&#x7A0B;&#x5E8F;&#xFF0C;&#x5176;&#x4ED6;&#x7684;CPU&#x5247;&#x8655;&#x7406;&#x8A2D;&#x5099;&#x786C;&#x4EF6;&#x7684;&#x76F8;&#x95DC;&#x4E8B;&#x52D9;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x97F3;&#x983B;&#xFF09;&#x3002;&#x9019;&#x4E9B;CPU&#x53EF;&#x80FD;&#x6709;&#x8457;&#x4E0D;&#x540C;&#x7684;&#x67B6;&#x69CB;&#xFF0C;&#x904B;&#x884C;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x7121;&#x6CD5;&#x5728;&#x5167;&#x5B58;&#x4E2D;&#x5F7C;&#x6B64;&#x9032;&#x884C;&#x6E9D;&#x901A;&#x4EA4;&#x4E92;&#x3002;</p>
+<p>&#x76EE;&#x524D;&#x5927;&#x591A;&#x6578;&#x552E;&#x8CE3;&#x7684;Android&#x8A2D;&#x5099;&#x90FD;&#x662F;SMP&#x67B6;&#x69CB;&#x7684;&#xFF0C;&#x9019;&#x4F7F;&#x5F97;&#x8EDF;&#x4EF6;&#x958B;&#x767C;&#x8005;&#x8655;&#x7406;&#x554F;&#x984C;&#x66F4;&#x52A0;&#x8907;&#x96DC;&#x3002;&#x5C0D;&#x65BC;&#x591A;&#x7DDA;&#x7A0B;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x5982;&#x679C;&#x591A;&#x500B;&#x7DDA;&#x7A0B;&#x57F7;&#x884C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x5167;&#x6838;&#x4E0A;&#xFF0C;&#x9019;&#x6703;&#x4F7F;&#x5F97;&#x7A0B;&#x5E8F;&#x66F4;&#x52A0;&#x5BB9;&#x6613;&#x767C;&#x751F;<strong>race conditions</strong>&#x3002; &#x66F4;&#x7CDF;&#x7CD5;&#x7684;&#x662F;&#xFF0C;&#x57FA;&#x65BC;ARM&#x67B6;&#x69CB;&#x7684;SMP&#x6BD4;&#x8D77;x86&#x67B6;&#x69CB;&#x4F86;&#x8AAA;&#xFF0C;&#x66F4;&#x52A0;&#x8907;&#x96DC;&#xFF0C;&#x66F4;&#x96E3;&#x9032;&#x884C;&#x8655;&#x7406;&#x3002;&#x90A3;&#x4E9B;&#x5728;x86&#x4E0A;&#x6E2C;&#x8A66;&#x901A;&#x904E;&#x7684;&#x7A0B;&#x5E8F;&#x53EF;&#x80FD;&#x6703;&#x5728;ARM&#x4E0A;&#x5D29;&#x6F70;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x6211;&#x5011;&#x6703;&#x4ECB;&#x7D39;&#x70BA;&#x4F55;&#x6703;&#x9019;&#x6A23;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x505A;&#x624D;&#x80FD;&#x5920;&#x4F7F;&#x5F97;&#x4F60;&#x7684;&#x4EE3;&#x78BC;&#x884C;&#x70BA;&#x6B63;&#x5E38;&#x3002;</p>
+<h2 id="1-%E7%90%86%E8%AB%96%E7%AF%87">1)&#x7406;&#x8AD6;&#x7BC7;</h2>
+<p>&#x9019;&#x88E1;&#x6703;&#x5FEB;&#x901F;&#x4E26;&#x4E14;&#x7C21;&#x8981;&#x7684;&#x4ECB;&#x7D39;&#x9019;&#x500B;&#x8907;&#x96DC;&#x7684;&#x4E3B;&#x984C;&#x3002;&#x5176;&#x4E2D;&#x4E00;&#x4E9B;&#x90E8;&#x5206;&#x4E26;&#x4E0D;&#x5B8C;&#x6574;&#xFF0C;&#x4F46;&#x662F;&#x4E26;&#x6C92;&#x6709;&#x51FA;&#x73FE;&#x932F;&#x8AA4;&#x6216;&#x8005;&#x8AA4;&#x5C0E;&#x3002;</p>
+<p>&#x67E5;&#x770B;&#x6587;&#x7AE0;&#x672B;&#x5C3E;&#x7684;<a href=""><strong>&#x9032;&#x4E00;&#x6B65;&#x95B1;&#x8B80;</strong></a>&#x53EF;&#x4EE5;&#x77AD;&#x89E3;&#x9019;&#x500B;&#x4E3B;&#x984C;&#x7684;&#x66F4;&#x591A;&#x77E5;&#x8B58;&#x3002;</p>
+<h3 id="1-1-%E5%85%A7%E5%AD%98%E4%B8%80%E8%87%B4%E6%80%A7%E6%A8%A1%E5%9E%8B-memory-consistency-models">1.1)&#x5167;&#x5B58;&#x4E00;&#x81F4;&#x6027;&#x6A21;&#x578B;(Memory consistency models)</h3>
+<p>&#x5167;&#x5B58;&#x4E00;&#x81F4;&#x6027;&#x6A21;&#x578B;(Memory consistency models)&#x901A;&#x5E38;&#x4E5F;&#x88AB;&#x53EB;&#x505A;&#x201C;memory models&#x201D;&#xFF0C;&#x63CF;&#x8FF0;&#x4E86;&#x786C;&#x4EF6;&#x67B6;&#x69CB;&#x5982;&#x4F55;&#x78BA;&#x4FDD;&#x5167;&#x5B58;&#x8A2A;&#x554F;&#x7684;&#x4E00;&#x81F4;&#x6027;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5C0D;&#x5730;&#x5740;A&#x9032;&#x884C;&#x4E86;&#x4E00;&#x500B;&#x8CE6;&#x503C;&#xFF0C;&#x7136;&#x5F8C;&#x5C0D;&#x5730;&#x5740;B&#x4E5F;&#x9032;&#x884C;&#x4E86;&#x8CE6;&#x503C;&#xFF0C;&#x90A3;&#x9EBC;&#x5167;&#x5B58;&#x4E00;&#x81F4;&#x6027;&#x6A21;&#x578B;&#x5C31;&#x9700;&#x8981;&#x78BA;&#x4FDD;&#x6BCF;&#x4E00;&#x500B;CPU&#x90FD;&#x9700;&#x8981;&#x77E5;&#x9053;&#x525B;&#x624D;&#x7684;&#x64CD;&#x4F5C;&#x8CE6;&#x503C;&#x8207;&#x64CD;&#x4F5C;&#x9806;&#x5E8F;&#x3002;</p>
+<p>&#x9019;&#x500B;&#x6A21;&#x578B;&#x901A;&#x5E38;&#x88AB;&#x7A0B;&#x5E8F;&#x54E1;&#x7A31;&#x70BA;&#xFF1A;<strong>&#x9806;&#x5E8F;&#x4E00;&#x81F4;&#x6027;(sequential consistency)</strong>, &#x8ACB;&#x5F9E;&#x6587;&#x7AE0;&#x672B;&#x5C3E;&#x7684;<strong>&#x9032;&#x4E00;&#x6B65;&#x95B1;&#x8B80;</strong>&#x67E5;&#x770B;<strong>Adve &amp; Gharachorloo</strong>&#x9019;&#x7BC7;&#x6587;&#x7AE0;&#x3002;</p>
+<ul>
+<li>&#x6240;&#x6709;&#x7684;&#x5167;&#x5B58;&#x64CD;&#x4F5C;&#x6BCF;&#x6B21;&#x53EA;&#x80FD;&#x57F7;&#x884C;&#x4E00;&#x500B;&#x3002;</li>
+<li>&#x6240;&#x6709;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5728;&#x55AE;&#x6838;CPU&#x4E0A;&#xFF0C;&#x90FD;&#x662F;&#x9806;&#x5E8F;&#x57F7;&#x884C;&#x7684;&#x3002;</li>
+</ul>
+<p>&#x5982;&#x679C;&#x4F60;&#x95DC;&#x6CE8;&#x4E00;&#x6BB5;&#x4EE3;&#x78BC;&#x5728;&#x5167;&#x5B58;&#x4E2D;&#x7684;&#x8B80;&#x5BEB;&#x64CD;&#x4F5C;&#xFF0C;&#x5728;sequentially-consistent&#x7684;CPU&#x67B6;&#x69CB;&#x4E0A;&#xFF0C;&#x662F;&#x6309;&#x7167;&#x671F;&#x5F85;&#x7684;&#x9806;&#x5E8F;&#x57F7;&#x884C;&#x7684;&#x3002;It&#x2019;s possible that the CPU is actually reordering instructions and delaying reads and writes, but there is no way for code running on the device to tell that the CPU is doing anything other than execute instructions in a straightforward manner. (We&#x2019;re ignoring memory-mapped device driver I/O for the moment.)</p>
+<p>To illustrate these points it&#x2019;s useful to consider small snippets of code, commonly referred to as litmus tests. These are assumed to execute in program order, that is, the order in which the instructions appear here is the order in which the CPU will execute them. We don&#x2019;t want to consider instruction reordering performed by compilers just yet.</p>
+<p>Here&#x2019;s a simple example, with code running on two threads:</p>
+<p>Thread 1    Thread 2
+A = 3
+B = 5    reg0 = B
+reg1 = A</p>
+<table>
+<thead>
+<tr>
+<th>Thread 1</th>
+<th>Thread 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A = 3 B = 5</td>
+<td>reg0 = B reg1 = A</td>
+</tr>
+</tbody>
+</table>
+<p>In this and all future litmus examples, memory locations are represented by capital letters (A, B, C) and CPU registers start with &#x201C;reg&#x201D;. All memory is initially zero. Instructions are executed from top to bottom. Here, thread 1 stores the value 3 at location A, and then the value 5 at location B. Thread 2 loads the value from location B into reg0, and then loads the value from location A into reg1. (Note that we&#x2019;re writing in one order and reading in another.)</p>
+<p>Thread 1 and thread 2 are assumed to execute on different CPU cores. You should always make this assumption when thinking about multi-threaded code.</p>
+<p>Sequential consistency guarantees that, after both threads have finished executing, the registers will be in one of the following states:</p>
+<table>
+<thead>
+<tr>
+<th>Registers</th>
+<th>States</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>reg0=5, reg1=3</td>
+<td>possible (thread 1 ran first)</td>
+</tr>
+<tr>
+<td>reg0=0, reg1=0</td>
+<td>possible (thread 2 ran first)</td>
+</tr>
+<tr>
+<td>reg0=0, reg1=3</td>
+<td>possible (concurrent execution)</td>
+</tr>
+<tr>
+<td>reg0=5, reg1=0</td>
+<td>never</td>
+</tr>
+</tbody>
+</table>
+<p>To get into a situation where we see B=5 before we see the store to A, either the reads or the writes would have to happen out of order. On a sequentially-consistent machine, that can&#x2019;t happen.</p>
+<p>Most uni-processors, including x86 and ARM, are sequentially consistent. Most SMP systems, including x86 and ARM, are not.</p>
+<h4 id="1-1-1-processor-consistency">1.1.1)Processor consistency</h4>
+<h4 id="1-1-2-cpu-cache-behavior">1.1.2)CPU cache behavior</h4>
+<h4 id="1-1-3-observability">1.1.3)Observability</h4>
+<h4 id="1-1-4-arm%E2%80%99s-weak-ordering">1.1.4)ARM&#x2019;s weak ordering</h4>
+<h3 id="1-2-data-memory-barriers">1.2)Data memory barriers</h3>
+<h4 id="1-2-1-store-store-and-load-load">1.2.1)Store/store and load/load</h4>
+<h4 id="1-2-2-load-store-and-store-load">1.2.2)Load/store and store/load</h4>
+<h4 id="1-2-3-barrier-instructions">1.2.3)Barrier instructions</h4>
+<h4 id="1-2-4-address-dependencies-and-causal-consistency">1.2.4)Address dependencies and causal consistency</h4>
+<h4 id="1-2-5-memory-barrier-summary">1.2.5)Memory barrier summary</h4>
+<h3 id="1-3-atomic-operations">1.3)Atomic operations</h3>
+<h4 id="1-3-1-atomic-essentials">1.3.1)Atomic essentials</h4>
+<h4 id="1-3-2-atomic-barrier-pairing">1.3.2)Atomic + barrier pairing</h4>
+<h4 id="1-3-3-acquire-and-release">1.3.3)Acquire and release</h4>
+<h2 id="2-%E5%AF%A6%E8%B8%90%E7%AF%87">2)&#x5BE6;&#x8E10;&#x7BC7;</h2>
+<p>&#x8ABF;&#x8A66;&#x5167;&#x5B58;&#x4E00;&#x81F4;&#x6027;(memory consistency)&#x7684;&#x554F;&#x984C;&#x975E;&#x5E38;&#x56F0;&#x96E3;&#x3002;&#x5982;&#x679C;&#x5167;&#x5B58;&#x67F5;&#x6B04;(memory barrier)&#x5C0E;&#x81F4;&#x4E00;&#x4E9B;&#x4EE3;&#x78BC;&#x8B80;&#x53D6;&#x5230;&#x9673;&#x820A;&#x7684;&#x6578;&#x64DA;&#xFF0C;&#x4F60;&#x5C07;&#x7121;&#x6CD5;&#x901A;&#x904E;&#x8ABF;&#x8A66;&#x5668;&#x6AA2;&#x67E5;&#x5167;&#x5B58;dumps&#x6587;&#x4EF6;&#x4F86;&#x627E;&#x51FA;&#x539F;&#x56E0;&#x3002;By the time you can issue a debugger query, the CPU cores will have all observed the full set of accesses, and the contents of memory and the CPU registers will appear to be in an &#x201C;impossible&#x201D; state.</p>
+<h3 id="2-1-what-not-to-do-in-c">2.1)What not to do in C</h3>
+<h4 id="2-1-1-c-c-and-%E2%80%9Cvolatile%E2%80%9D">2.1.1)C/C++ and &#x201C;volatile&#x201D;</h4>
+<h4 id="2-1-2-examples">2.1.2)Examples</h4>
+<h3 id="2-2-%E5%9C%A8java%E4%B8%AD%E4%B8%8D%E6%87%89%E8%A9%B2%E5%81%9A%E7%9A%84%E4%BA%8B">2.2)&#x5728;Java&#x4E2D;&#x4E0D;&#x61C9;&#x8A72;&#x505A;&#x7684;&#x4E8B;</h3>
+<p>&#x6211;&#x5011;&#x6C92;&#x6709;&#x8A0E;&#x8AD6;&#x904E;Java&#x8A9E;&#x8A00;&#x7684;&#x4E00;&#x4E9B;&#x76F8;&#x95DC;&#x7279;&#x6027;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x5011;&#x9996;&#x5148;&#x4F86;&#x7C21;&#x8981;&#x7684;&#x770B;&#x4E0B;&#x90A3;&#x4E9B;&#x7279;&#x6027;&#x3002;</p>
+<h4 id="2-2-1-java%E4%B8%AD%E7%9A%84-synchronized-%E8%88%87-volatile-%E9%97%9C%E9%8D%B5%E5%AD%97">2.2.1)Java&#x4E2D;&#x7684;&quot;synchronized&quot;&#x8207;&quot;volatile&quot;&#x95DC;&#x9375;&#x5B57;</h4>
+<p><strong>&#x201C;synchronized&#x201D;</strong>&#x95DC;&#x9375;&#x5B57;&#x63D0;&#x4F9B;&#x4E86;Java&#x4E00;&#x7A2E;&#x5167;&#x7F6E;&#x7684;&#x9396;&#x6A5F;&#x5236;&#x3002;&#x6BCF;&#x4E00;&#x500B;&#x5C0D;&#x8C61;&#x90FD;&#x6709;&#x4E00;&#x500B;&#x76F8;&#x5C0D;&#x61C9;&#x7684;&#x201C;monitor&#x201D;&#xFF0C;&#x9019;&#x500B;&#x76E3;&#x807D;&#x5668;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x4E92;&#x65A5;&#x7684;&#x8A2A;&#x554F;&#x3002;</p>
+<p>&#x201C;synchronized&#x201D;&#x4EE3;&#x78BC;&#x6BB5;&#x7684;&#x5BE6;&#x73FE;&#x6A5F;&#x5236;&#x8207;&#x81EA;&#x65CB;&#x9396;(spin lock)&#x6709;&#x8457;&#x76F8;&#x540C;&#x7684;&#x57FA;&#x790E;&#x7D50;&#x69CB;: &#x4ED6;&#x5011;&#x90FD;&#x662F;&#x5F9E;&#x7372;&#x53D6;&#x5230;CAS&#x958B;&#x59CB;&#xFF0C;&#x4EE5;&#x91CB;&#x653E;CAS&#x7D50;&#x675F;&#x3002;&#x9019;&#x610F;&#x5473;&#x8457;&#x7DE8;&#x8B6F;&#x5668;(compilers)&#x8207;&#x4EE3;&#x78BC;&#x512A;&#x5316;&#x5668;(code optimizers)&#x53EF;&#x4EE5;&#x8F15;&#x9B06;&#x7684;&#x9077;&#x79FB;&#x4EE3;&#x78BC;&#x5230;&#x201C;synchronized&#x201D;&#x4EE3;&#x78BC;&#x6BB5;&#x4E2D;&#x3002;&#x4E00;&#x500B;&#x5BE6;&#x8E10;&#x7D50;&#x679C;&#x662F;&#xFF1A;&#x4F60;<strong>&#x4E0D;&#x80FD;</strong>&#x5224;&#x5B9A;synchronized&#x4EE3;&#x78BC;&#x6BB5;&#x662F;&#x57F7;&#x884C;&#x5728;&#x9019;&#x6BB5;&#x4EE3;&#x78BC;&#x4E0B;&#x9762;&#x4E00;&#x90E8;&#x5206;&#x7684;&#x524D;&#x9762;&#xFF0C;&#x9084;&#x662F;&#x9019;&#x6BB5;&#x4EE3;&#x78BC;&#x4E0A;&#x9762;&#x4E00;&#x90E8;&#x5206;&#x7684;&#x5F8C;&#x9762;&#x3002;&#x66F4;&#x9032;&#x4E00;&#x6B65;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x500B;&#x65B9;&#x6CD5;&#x6709;&#x5169;&#x500B;synchronized&#x4EE3;&#x78BC;&#x6BB5;&#x4E26;&#x4E14;&#x9396;&#x4F4F;&#x7684;&#x662F;&#x540C;&#x4E00;&#x500B;&#x5C0D;&#x8C61;&#xFF0C;&#x90A3;&#x9EBC;&#x5728;&#x9019;&#x5169;&#x500B;&#x64CD;&#x4F5C;&#x7684;&#x4E2D;&#x9593;&#x4EE3;&#x78BC;&#x90FD;&#x7121;&#x6CD5;&#x88AB;&#x5176;&#x4ED6;&#x7684;&#x7DDA;&#x7A0B;&#x6240;&#x6AA2;&#x6E2C;&#x5230;&#xFF0C;&#x7DE8;&#x8B6F;&#x5668;&#x53EF;&#x80FD;&#x6703;&#x57F7;&#x884C;&#x201C;&#x9396;&#x7C97;&#x5316;lock coarsening&#x201D;&#x4E26;&#x4E14;&#x628A;&#x9019;&#x5169;&#x8005;&#x7D81;&#x5B9A;&#x5230;&#x540C;&#x4E00;&#x500B;&#x4EE3;&#x78BC;&#x584A;&#x4E0A;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#x4E00;&#x500B;&#x76F8;&#x95DC;&#x7684;&#x95DC;&#x9375;&#x5B57;&#x662F;<strong>&#x201C;volatile&#x201D;</strong>&#x3002;&#x5728;Java 1.4&#x4EE5;&#x53CA;&#x4E4B;&#x524D;&#x7684;&#x6587;&#x6A94;&#x4E2D;&#x662F;&#x9019;&#x6A23;&#x5B9A;&#x7FA9;&#x7684;&#xFF1A;volatile&#x8072;&#x660E;&#x548C;&#x5C0D;&#x61C9;&#x7684;C&#x8A9E;&#x8A00;&#x4E2D;&#x7684;&#x4E00;&#x6A23;&#x53EF;&#x4E0D;&#x9760;&#x3002;&#x5F9E;Java 1.5&#x958B;&#x59CB;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x6709;&#x529B;&#x7684;&#x4FDD;&#x969C;&#xFF0C;&#x751A;&#x81F3;&#x548C;synchronization&#x4E00;&#x6A23;&#x5177;&#x5099;&#x5F37;&#x540C;&#x6B65;&#x7684;&#x6A5F;&#x5236;&#x3002;</p>
+<p>volatile&#x7684;&#x8A2A;&#x554F;&#x6548;&#x679C;&#x53EF;&#x4EE5;&#x7528;&#x4E0B;&#x9762;&#x9019;&#x500B;&#x4F8B;&#x5B50;&#x4F86;&#x8AAA;&#x660E;&#x3002;&#x5982;&#x679C;&#x7DDA;&#x7A0B;1&#x7D66;volatile&#x5B57;&#x6BB5;&#x505A;&#x4E86;&#x8CE6;&#x503C;&#x64CD;&#x4F5C;&#xFF0C;&#x7DDA;&#x7A0B;2&#x7DCA;&#x63A5;&#x8457;&#x8B80;&#x53D6;&#x90A3;&#x500B;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#xFF0C;&#x90A3;&#x9EBC;&#x7DDA;&#x7A0B;2&#x662F;&#x88AB;&#x78BA;&#x4FDD;&#x80FD;&#x5920;&#x67E5;&#x770B;&#x5230;&#x4E4B;&#x524D;&#x7DDA;&#x7A0B;1&#x7684;&#x4EFB;&#x4F55;&#x5BEB;&#x64CD;&#x4F5C;&#x3002;&#x66F4;&#x901A;&#x5E38;&#x7684;&#x60C5;&#x6CC1;&#x662F;&#xFF0C;<strong>&#x4EFB;&#x4F55;</strong>&#x7DDA;&#x7A0B;&#x5C0D;&#x90A3;&#x500B;&#x5B57;&#x6BB5;&#x7684;&#x5BEB;&#x64CD;&#x4F5C;&#x5C0D;&#x65BC;&#x7DDA;&#x7A0B;2&#x4F86;&#x8AAA;&#x90FD;&#x662F;&#x53EF;&#x898B;&#x7684;&#x3002;&#x5BE6;&#x969B;&#x4E0A;&#xFF0C;&#x5BEB;volatile&#x5C31;&#x50CF;&#x662F;&#x91CB;&#x653E;&#x4EF6;&#x76E3;&#x807D;&#x5668;&#xFF0C;&#x8B80;volatile&#x5C31;&#x50CF;&#x662F;&#x7372;&#x53D6;&#x76E3;&#x807D;&#x5668;&#x3002;</p>
+<p>&#x975E;volatile&#x7684;&#x8A2A;&#x554F;&#x6709;&#x53EF;&#x80FD;&#x56E0;&#x70BA;&#x7167;&#x9867;volatile&#x7684;&#x8A2A;&#x554F;&#x800C;&#x9700;&#x8981;&#x505A;&#x9806;&#x5E8F;&#x7684;&#x8ABF;&#x6574;&#x3002;&#x4F8B;&#x5982;&#x7DE8;&#x8B6F;&#x5668;&#x53EF;&#x80FD;&#x6703;&#x5F80;&#x4E0A;&#x79FB;&#x52D5;&#x4E00;&#x500B;&#x975E;volatile&#x52A0;&#x8F09;&#x64CD;&#x4F5C;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x6703;&#x5F80;&#x4E0B;&#x79FB;&#x52D5;&#x3002;Volatile&#x4E4B;&#x9593;&#x7684;&#x8A2A;&#x554F;&#x4E0D;&#x6703;&#x56E0;&#x70BA;&#x5F7C;&#x6B64;&#x800C;&#x505A;&#x51FA;&#x9806;&#x5E8F;&#x7684;&#x8ABF;&#x6574;&#x3002;&#x865B;&#x64EC;&#x6A5F;&#x6703;&#x6CE8;&#x610F;&#x8655;&#x7406;&#x5982;&#x4F55;&#x7684;&#x5167;&#x5B58;&#x67F5;&#x6B04;(memory barriers)&#x3002;</p>
+<p>&#x7576;&#x52A0;&#x8F09;&#x8207;&#x4FDD;&#x5B58;&#x5927;&#x591A;&#x6578;&#x7684;&#x57FA;&#x790E;&#x6578;&#x64DA;&#x985E;&#x578B;&#xFF0C;&#x4ED6;&#x5011;&#x90FD;&#x662F;&#x539F;&#x5B50;&#x7684;atomic, &#x5C0D;&#x65BC;long&#x4EE5;&#x53CA;double&#x985E;&#x578B;&#x7684;&#x6578;&#x64DA;&#x5247;&#x4E0D;&#x5177;&#x5099;&#x539F;&#x5B50;&#x578B;&#xFF0C;&#x9664;&#x975E;&#x4ED6;&#x5011;&#x88AB;&#x8072;&#x660E;&#x70BA;volatile&#x3002;&#x5373;&#x4F7F;&#x662F;&#x5728;&#x55AE;&#x6838;&#x8655;&#x7406;&#x5668;&#x4E0A;&#xFF0C;&#x4F75;&#x767C;&#x591A;&#x7DDA;&#x7A0B;&#x66F4;&#x65B0;&#x975E;volatile&#x5B57;&#x6BB5;&#x503C;&#x4E5F;&#x9084;&#x662F;&#x4E0D;&#x78BA;&#x5B9A;&#x7684;&#x3002;</p>
+<h4 id="2-2-2-examples">2.2.2)Examples</h4>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x500B;&#x932F;&#x8AA4;&#x5BE6;&#x73FE;&#x7684;&#x55AE;&#x6B65;&#x8A08;&#x6578;&#x5668;(monotonic counter)&#x7684;&#x793A;&#x4F8B;: (<a href="smp.html#more">Java theory and practice: Managing volatility</a>).</p>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Counter</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> mValue;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">get</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> mValue;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">incr</span><span class="hljs-params">()</span> </span>{
+        mValue++;
+    }
+}
+</code></pre>
+<p>&#x5047;&#x8A2D;get()&#x8207;incr()&#x65B9;&#x6CD5;&#x662F;&#x88AB;&#x591A;&#x7DDA;&#x7A0B;&#x8ABF;&#x7528;&#x7684;&#x3002;&#x7136;&#x5F8C;&#x6211;&#x5011;&#x60F3;&#x78BA;&#x4FDD;&#x7576;get()&#x65B9;&#x6CD5;&#x88AB;&#x8ABF;&#x7528;&#x6642;&#xFF0C;&#x6BCF;&#x4E00;&#x500B;&#x7DDA;&#x7A0B;&#x90FD;&#x80FD;&#x5920;&#x770B;&#x5230;&#x7576;&#x524D;&#x7684;&#x6578;&#x91CF;&#x3002;&#x6700;&#x5F15;&#x4EBA;&#x6CE8;&#x76EE;&#x7684;&#x554F;&#x984C;&#x662F;mValue++&#x5BE6;&#x969B;&#x4E0A;&#x5305;&#x542B;&#x4E86;&#x4E0B;&#x9762;&#x4E09;&#x500B;&#x64CD;&#x4F5C;&#x3002;</p>
+<ol>
+<li>reg = mValue</li>
+<li>reg = reg + 1</li>
+<li>mValue = reg</li>
+</ol>
+<p>&#x5982;&#x679C;&#x5169;&#x500B;&#x7DDA;&#x7A0B;&#x540C;&#x6642;&#x5728;&#x57F7;&#x884C;<code>incr()</code>&#x65B9;&#x6CD5;&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x500B;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#x6703;&#x4E1F;&#x5931;&#x3002;&#x70BA;&#x4E86;&#x78BA;&#x4FDD;&#x6B63;&#x78BA;&#x7684;&#x57F7;&#x884C;<code>++</code>&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x6211;&#x5011;&#x9700;&#x8981;&#x628A;<code>incr()</code>&#x65B9;&#x6CD5;&#x8072;&#x660E;&#x70BA;&#x201C;synchronized&#x201D;&#x3002;&#x9019;&#x6A23;&#x4FEE;&#x6539;&#x4E4B;&#x5F8C;&#xFF0C;&#x9019;&#x6BB5;&#x4EE3;&#x78BC;&#x624D;&#x80FD;&#x5920;&#x5728;&#x55AE;&#x6838;&#x591A;&#x7DDA;&#x7A0B;&#x7684;&#x74B0;&#x5883;&#x4E2D;&#x6B63;&#x78BA;&#x7684;&#x57F7;&#x884C;&#x3002;</p>
+<p>&#x7136;&#x800C;&#xFF0C;&#x5728;SMP&#x7684;&#x7CFB;&#x7D71;&#x4E0B;&#x9084;&#x662F;&#x6703;&#x57F7;&#x884C;&#x5931;&#x6557;&#x3002;&#x4E0D;&#x540C;&#x7684;&#x7DDA;&#x7A0B;&#x901A;&#x904E;<code>get()</code>&#x65B9;&#x6CD5;&#x7372;&#x53D6;&#x5230;&#x5F97;&#x503C;&#x53EF;&#x80FD;&#x662F;&#x4E0D;&#x4E00;&#x6A23;&#x7684;&#x3002;&#x56E0;&#x70BA;&#x6211;&#x5011;&#x662F;&#x4F7F;&#x7528;&#x901A;&#x5E38;&#x7684;&#x52A0;&#x8F09;&#x65B9;&#x5F0F;&#x4F86;&#x8B80;&#x53D6;&#x9019;&#x500B;&#x503C;&#x7684;&#x3002;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x901A;&#x904E;&#x8072;&#x660E;<code>get()</code>&#x65B9;&#x6CD5;&#x70BA;synchronized&#x7684;&#x65B9;&#x5F0F;&#x4F86;&#x4FEE;&#x6B63;&#x9019;&#x500B;&#x932F;&#x8AA4;&#x3002;&#x901A;&#x904E;&#x9019;&#x4E9B;&#x4FEE;&#x6539;&#xFF0C;&#x9019;&#x6A23;&#x7684;&#x4EE3;&#x78BC;&#x624D;&#x662F;&#x6B63;&#x78BA;&#x7684;&#x4E86;&#x3002;</p>
+<p>&#x4E0D;&#x5E78;&#x7684;&#x662F;&#xFF0C;&#x6211;&#x5011;&#x6709;&#x4ECB;&#x7D39;&#x904E;&#x6709;&#x53EF;&#x80FD;&#x767C;&#x751F;&#x7684;&#x9396;&#x7AF6;&#x722D;(lock contention)&#xFF0C;&#x9019;&#x6709;&#x53EF;&#x80FD;&#x6703;&#x50B7;&#x5BB3;&#x5230;&#x7A0B;&#x5E8F;&#x7684;&#x6027;&#x80FD;&#x3002;&#x9664;&#x4E86;&#x8072;&#x660E;<code>get()</code>&#x65B9;&#x6CD5;&#x70BA;synchronized&#x4E4B;&#x5916;&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x8072;&#x660E;<code>mValue</code>&#x70BA;<strong>&#x201C;volatile&#x201D;</strong>. (&#x8ACB;&#x6CE8;&#x610F;<code>incr()</code>&#x5FC5;&#x9808;&#x4F7F;&#x7528;synchronize) &#x73FE;&#x5728;&#x6211;&#x5011;&#x77E5;&#x9053;volatile&#x7684;mValue&#x7684;&#x5BEB;&#x64CD;&#x4F5C;&#x5C0D;&#x65BC;&#x5F8C;&#x7E8C;&#x7684;&#x8B80;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x53EF;&#x898B;&#x7684;&#x3002;<code>incr()</code>&#x5C07;&#x6703;&#x7A0D;&#x7A0D;&#x6709;&#x9EDE;&#x8B8A;&#x6162;&#xFF0C;&#x4F46;&#x662F;<code>get()</code>&#x65B9;&#x6CD5;&#x5C07;&#x6703;&#x8B8A;&#x5F97;&#x66F4;&#x52A0;&#x5FEB;&#x901F;&#x3002;&#x56E0;&#x6B64;&#x8B80;&#x64CD;&#x4F5C;&#x591A;&#x65BC;&#x5BEB;&#x64CD;&#x4F5C;&#x6642;&#xFF0C;&#x9019;&#x6703;&#x662F;&#x4E00;&#x500B;&#x6BD4;&#x8F03;&#x597D;&#x7684;&#x65B9;&#x6848;&#x3002;(&#x8ACB;&#x53C3;&#x8003;AtomicInteger.)</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x53E6;&#x5916;&#x4E00;&#x500B;&#x793A;&#x4F8B;&#xFF0C;&#x548C;&#x4E4B;&#x524D;&#x7684;C&#x793A;&#x4F8B;&#x6709;&#x9EDE;&#x985E;&#x4F3C;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyGoodies</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> x, y;
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span> </span>{
+    <span class="hljs-keyword">static</span> MyGoodies sGoodies;
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">initGoodies</span><span class="hljs-params">()</span> </span>{    <span class="hljs-comment">// runs in thread 1</span>
+        MyGoodies goods = <span class="hljs-keyword">new</span> MyGoodies();
+        goods.x = <span class="hljs-number">5</span>;
+        goods.y = <span class="hljs-number">10</span>;
+        sGoodies = goods;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">useGoodies</span><span class="hljs-params">()</span> </span>{    <span class="hljs-comment">// runs in thread 2</span>
+        <span class="hljs-keyword">if</span> (sGoodies != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">int</span> i = sGoodies.x;    <span class="hljs-comment">// could be 5 or 0</span>
+            ....
+        }
+    }
+}
+</code></pre>
+<p>&#x9019;&#x6BB5;&#x4EE3;&#x78BC;&#x540C;&#x6A23;&#x5B58;&#x5728;&#x8457;&#x554F;&#x984C;&#xFF0C;<code>sGoodies = goods</code>&#x7684;&#x8CE6;&#x503C;&#x64CD;&#x4F5C;&#x6709;&#x53EF;&#x80FD;&#x5728;<code>goods</code>&#x6210;&#x54E1;&#x8B8A;&#x91CF;&#x8CE6;&#x503C;&#x4E4B;&#x524D;&#x88AB;&#x5BDF;&#x89BA;&#x5230;&#x3002;&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;<code>volatile</code>&#x8072;&#x660E;<code>sGoodies</code>&#x8B8A;&#x91CF;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8A8D;&#x70BA;load&#x64CD;&#x4F5C;&#x70BA;<code>atomic_acquire_load()</code>&#xFF0C;&#x4E26;&#x4E14;&#x628A;store&#x64CD;&#x4F5C;&#x8A8D;&#x70BA;&#x662F;<code>atomic_release_store()</code>&#x3002;</p>
+<p>(&#x8ACB;&#x6CE8;&#x610F;&#x50C5;&#x50C5;&#x662F;<code>sGoodies</code>&#x7684;&#x5F15;&#x7528;&#x672C;&#x8EAB;&#x70BA;<code>volatile</code>&#xFF0C;&#x8A2A;&#x554F;&#x5B83;&#x7684;&#x5167;&#x90E8;&#x5B57;&#x6BB5;&#x4E26;&#x4E0D;&#x662F;&#x9019;&#x6A23;&#x7684;&#x3002;&#x8CE6;&#x503C;&#x8A9E;&#x53E5;<code>z = sGoodies.x</code>&#x6703;&#x57F7;&#x884C;&#x4E00;&#x500B;volatile load  MyClass.sGoodies&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5176;&#x5F8C;&#x6703;&#x4F34;&#x96A8;&#x4E00;&#x500B;non-volatile&#x7684;load&#x64CD;&#x4F5C;&#xFF1A;&#xFF1A;<code>sGoodies.x</code>&#x3002;&#x5982;&#x679C;&#x4F60;&#x8A2D;&#x7F6E;&#x4E86;&#x4E00;&#x500B;&#x672C;&#x5730;&#x5F15;&#x7528;<code>MyGoodies localGoods = sGoodies, z = localGoods.x</code>&#xFF0C;&#x9019;&#x5C07;&#x4E0D;&#x6703;&#x57F7;&#x884C;&#x4EFB;&#x4F55;volatile loads.)</p>
+<p>&#x53E6;&#x5916;&#x4E00;&#x500B;&#x5728;Java&#x7A0B;&#x5E8F;&#x4E2D;&#x66F4;&#x52A0;&#x5E38;&#x7528;&#x7684;&#x7BC4;&#x5F0F;&#x5C31;&#x662F;&#x81ED;&#x540D;&#x662D;&#x8457;&#x7684;<strong>&#x201C;double-checked locking&#x201D;</strong>:</p>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span> </span>{
+    <span class="hljs-keyword">private</span> Helper helper = <span class="hljs-keyword">null</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Helper <span class="hljs-title">getHelper</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span> (helper == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {
+                <span class="hljs-keyword">if</span> (helper == <span class="hljs-keyword">null</span>) {
+                    helper = <span class="hljs-keyword">new</span> Helper();
+                }
+            }
+        }
+        <span class="hljs-keyword">return</span> helper;
+    }
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x5BEB;&#x6CD5;&#x662F;&#x70BA;&#x4E86;&#x7372;&#x5F97;&#x4E00;&#x500B;MyClass&#x7684;&#x55AE;&#x4F8B;&#x3002;&#x6211;&#x5011;&#x53EA;&#x9700;&#x8981;&#x5275;&#x5EFA;&#x4E00;&#x6B21;&#x9019;&#x500B;&#x5BE6;&#x4F8B;&#xFF0C;&#x901A;&#x904E;<code>getHelper()</code>&#x9019;&#x500B;&#x65B9;&#x6CD5;&#x3002;&#x70BA;&#x4E86;&#x907F;&#x514D;&#x5169;&#x500B;&#x7DDA;&#x7A0B;&#x6703;&#x540C;&#x6642;&#x5275;&#x5EFA;&#x9019;&#x500B;&#x5BE6;&#x4F8B;&#x3002;&#x6211;&#x5011;&#x9700;&#x8981;&#x5C0D;&#x5275;&#x5EFA;&#x7684;&#x64CD;&#x4F5C;&#x52A0;synchronize&#x6A5F;&#x5236;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x6211;&#x5011;&#x4E0D;&#x60F3;&#x8981;&#x70BA;&#x4E86;&#x6BCF;&#x6B21;&#x57F7;&#x884C;&#x9019;&#x6BB5;&#x4EE3;&#x78BC;&#x7684;&#x6642;&#x5019;&#x90FD;&#x70BA;&#x201C;synchronized&#x201D;&#x4ED8;&#x51FA;&#x984D;&#x5916;&#x7684;&#x4EE3;&#x50F9;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x5011;&#x50C5;&#x50C5;&#x5728;helper&#x5C0D;&#x8C61;&#x70BA;&#x7A7A;&#x7684;&#x6642;&#x5019;&#x52A0;&#x9396;&#x3002;</p>
+<p>&#x5728;&#x55AE;&#x6838;&#x7CFB;&#x7D71;&#x4E0A;&#xFF0C;&#x9019;&#x662F;&#x4E0D;&#x80FD;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x7684;&#x3002;JIT&#x7DE8;&#x8B6F;&#x5668;&#x6703;&#x7834;&#x58DE;&#x9019;&#x4EF6;&#x4E8B;&#x60C5;&#x3002;&#x8ACB;&#x67E5;&#x770B;<a href="#appendix">4)Appendix</a>&#x7684;&#x201C;&#x2018;Double Checked Locking is Broken&#x2019; Declaration&#x201D;&#x7372;&#x53D6;&#x66F4;&#x591A;&#x7684;&#x4FE1;&#x606F;, &#x6216;&#x8005;&#x662F;Josh Bloch&#x2019;s Effective Java&#x66F8;&#x4E2D;&#x7684;Item 71 (&#x201C;Use lazy initialization judiciously&#x201D;)&#x3002;</p>
+<p>&#x5728;SMP&#x7CFB;&#x7D71;&#x4E0A;&#x57F7;&#x884C;&#x9019;&#x6BB5;&#x4EE3;&#x78BC;&#xFF0C;&#x5F15;&#x5165;&#x4E86;&#x4E00;&#x500B;&#x984D;&#x5916;&#x7684;&#x65B9;&#x5F0F;&#x6703;&#x5C0E;&#x81F4;&#x5931;&#x6557;&#x3002;&#x628A;&#x4E0A;&#x9762;&#x90A3;&#x6BB5;&#x4EE3;&#x78BC;&#x63DB;&#x6210;C&#x7684;&#x8A9E;&#x8A00;&#x5BE6;&#x73FE;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (helper == null) {
+    <span class="hljs-comment">// acquire monitor using spinlock</span>
+    <span class="hljs-keyword">while</span> (atomic_acquire_cas(&amp;<span class="hljs-keyword">this</span>.lock, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>) != success)
+        ;
+    <span class="hljs-keyword">if</span> (helper == null) {
+        newHelper = <span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Helper));
+        newHelper-&gt;x = <span class="hljs-number">5</span>;
+        newHelper-&gt;y = <span class="hljs-number">10</span>;
+        helper = newHelper;
+    }
+    atomic_release_store(&amp;<span class="hljs-keyword">this</span>.lock, <span class="hljs-number">0</span>);
+}
+</code></pre>
+<p>&#x6B64;&#x6642;&#x554F;&#x984C;&#x5C31;&#x66F4;&#x52A0;&#x660E;&#x986F;&#x4E86;: <code>helper</code>&#x7684;store&#x64CD;&#x4F5C;&#x767C;&#x751F;&#x5728;memory barrier&#x4E4B;&#x524D;&#xFF0C;&#x9019;&#x610F;&#x5473;&#x8457;&#x5176;&#x4ED6;&#x7684;&#x7DDA;&#x7A0B;&#x80FD;&#x5920;&#x5728;store x/y&#x4E4B;&#x524D;&#x89C0;&#x5BDF;&#x5230;&#x975E;&#x7A7A;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x4F60;&#x61C9;&#x8A72;&#x5617;&#x8A66;&#x78BA;&#x4FDD;store helper&#x57F7;&#x884C;&#x5728;<code>atomic_release_store()</code>&#x65B9;&#x6CD5;&#x4E4B;&#x5F8C;&#x3002;&#x901A;&#x904E;&#x91CD;&#x65B0;&#x6392;&#x5E8F;&#x4EE3;&#x78BC;&#x9032;&#x884C;&#x52A0;&#x9396;&#xFF0C;&#x4F46;&#x662F;&#x9019;&#x662F;&#x7121;&#x6548;&#x7684;&#xFF0C;&#x56E0;&#x70BA;&#x5F80;&#x4E0A;&#x79FB;&#x52D5;&#x7684;&#x4EE3;&#x78BC;&#xFF0C;&#x7DE8;&#x8B6F;&#x5668;&#x53EF;&#x4EE5;&#x628A;&#x5B83;&#x79FB;&#x52D5;&#x56DE;&#x539F;&#x4F86;&#x7684;&#x4F4D;&#x7F6E;&#xFF1A;&#x5728;<code>atomic_release_store()</code>&#x524D;&#x9762;&#x3002;
+(<em>&#x9019;&#x88E1;&#x6C92;&#x6709;&#x8B80;&#x61C2;&#xFF0C;&#x4E0B;&#x6B21;&#x518D;&#x56DE;&#x8B80;</em>)</p>
+<p>&#x6709;2&#x500B;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x89E3;&#x6C7A;&#x9019;&#x500B;&#x554F;&#x984C;&#xFF1A;</p>
+<ul>
+<li>&#x522A;&#x9664;&#x5916;&#x5C64;&#x7684;&#x6AA2;&#x67E5;&#x3002;&#x9019;&#x78BA;&#x4FDD;&#x4E86;&#x6211;&#x5011;&#x4E0D;&#x6703;&#x5728;synchronized&#x4EE3;&#x78BC;&#x6BB5;&#x4E4B;&#x5916;&#x505A;&#x4EFB;&#x4F55;&#x7684;&#x6AA2;&#x67E5;&#x3002;</li>
+<li>&#x8072;&#x660E;helper&#x70BA;volatile&#x3002;&#x50C5;&#x50C5;&#x9019;&#x6A23;&#x4E00;&#x500B;&#x5C0F;&#x5C0F;&#x7684;&#x4FEE;&#x6539;&#xFF0C;&#x5728;&#x524D;&#x9762;&#x793A;&#x4F8B;&#x4E2D;&#x7684;&#x4EE3;&#x78BC;&#x5C31;&#x80FD;&#x5920;&#x5728;Java 1.5&#x53CA;&#x5176;&#x4EE5;&#x5F8C;&#x7684;&#x7248;&#x672C;&#x4E2D;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002;</li>
+</ul>
+<p>&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x4F7F;&#x7528;volatile&#x7684;2&#x5404;&#x91CD;&#x8981;&#x554F;&#x984C;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span> </span>{
+    <span class="hljs-keyword">int</span> data1, data2;
+    <span class="hljs-keyword">volatile</span> <span class="hljs-keyword">int</span> vol1, vol2;
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setValues</span><span class="hljs-params">()</span> </span>{    <span class="hljs-comment">// runs in thread 1</span>
+        data1 = <span class="hljs-number">1</span>;
+        vol1 = <span class="hljs-number">2</span>;
+        data2 = <span class="hljs-number">3</span>;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">useValues1</span><span class="hljs-params">()</span> </span>{    <span class="hljs-comment">// runs in thread 2</span>
+        <span class="hljs-keyword">if</span> (vol1 == <span class="hljs-number">2</span>) {
+            <span class="hljs-keyword">int</span> l1 = data1;    <span class="hljs-comment">// okay</span>
+            <span class="hljs-keyword">int</span> l2 = data2;    <span class="hljs-comment">// wrong</span>
+        }
+    }
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">useValues2</span><span class="hljs-params">()</span> </span>{    <span class="hljs-comment">// runs in thread 2</span>
+        <span class="hljs-keyword">int</span> dummy = vol2;
+        <span class="hljs-keyword">int</span> l1 = data1;    <span class="hljs-comment">// wrong</span>
+        <span class="hljs-keyword">int</span> l2 = data2;    <span class="hljs-comment">// wrong</span>
+    }
+</code></pre>
+<p>&#x8ACB;&#x6CE8;&#x610F;<code>useValues1()</code>&#xFF0C;&#x5982;&#x679C;thread 2&#x9084;&#x6C92;&#x6709;&#x5BDF;&#x89BA;&#x5230;<code>vol1</code>&#x7684;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#xFF0C;&#x90A3;&#x9EBC;&#x5B83;&#x4E5F;&#x7121;&#x6CD5;&#x77E5;&#x9053;<code>data1</code>&#x6216;&#x8005;<code>data2</code>&#x88AB;&#x8A2D;&#x7F6E;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x4E00;&#x65E6;&#x5B83;&#x89C0;&#x5BDF;&#x5230;&#x4E86;<code>vol1</code>&#x7684;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#xFF0C;&#x90A3;&#x9EBC;&#x5B83;&#x4E5F;&#x80FD;&#x5920;&#x77E5;&#x9053;data1&#x7684;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5C0D;&#x65BC;<code>data2</code>&#x5247;&#x7121;&#x6CD5;&#x505A;&#x4EFB;&#x4F55;&#x731C;&#x6E2C;&#xFF0C;&#x56E0;&#x70BA;store&#x64CD;&#x4F5C;&#x662F;&#x5728;volatile store&#x4E4B;&#x5F8C;&#x767C;&#x751F;&#x7684;&#x3002;</p>
+<p><code>useValues2()</code>&#x4F7F;&#x7528;&#x4E86;&#x7B2C;2&#x500B;volatile&#x5B57;&#x6BB5;&#xFF1A;vol2&#xFF0C;&#x9019;&#x6703;&#x5F37;&#x5236;VM&#x751F;&#x6210;&#x4E00;&#x500B;memory barrier&#x3002;&#x9019;&#x901A;&#x5E38;&#x4E0D;&#x6703;&#x767C;&#x751F;&#x3002;&#x70BA;&#x4E86;&#x5EFA;&#x7ACB;&#x4E00;&#x500B;&#x6070;&#x7576;&#x7684;&#x201C;happens-before&#x201D;&#x95DC;&#x4FC2;&#xFF0C;2&#x500B;&#x7DDA;&#x7A0B;&#x90FD;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x500B;volatile&#x5B57;&#x6BB5;&#x3002;&#x5728;thread 1&#x4E2D;&#x4F60;&#x9700;&#x8981;&#x77E5;&#x9053;vol2&#x662F;&#x5728;data1/data2&#x4E4B;&#x5F8C;&#x88AB;&#x8A2D;&#x7F6E;&#x7684;&#x3002;(The fact that this doesn&#x2019;t work is probably obvious from looking at the code; the caution here is against trying to cleverly &#x201C;cause&#x201D; a memory barrier instead of creating an ordered series of accesses.)</p>
+<h3 id="2-3-what-to-do">2.3)What to do</h3>
+<h4 id="2-3-1-general-advice">2.3.1)General advice</h4>
+<p>&#x5728;C/C++&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;<code>pthread</code>&#x64CD;&#x4F5C;&#xFF0C;&#x4F8B;&#x5982;mutexes&#x8207;semaphores&#x3002;&#x4ED6;&#x5011;&#x6703;&#x4F7F;&#x7528;&#x5408;&#x9069;&#x7684;memory barriers&#xFF0C;&#x5728;&#x6240;&#x6709;&#x7684;Android&#x5E73;&#x81FA;&#x4E0A;&#x63D0;&#x4F9B;&#x6B63;&#x78BA;&#x6709;&#x6548;&#x7684;&#x884C;&#x70BA;&#x3002;&#x8ACB;&#x78BA;&#x4FDD;&#x6B63;&#x78BA;&#x9019;&#x4E9B;&#x6280;&#x8853;&#xFF0C;&#x4F8B;&#x5982;&#x5728;&#x6C92;&#x6709;&#x7372;&#x5F97;&#x5C0D;&#x61C9;&#x7684;mutex&#x7684;&#x60C5;&#x6CC1;&#x4E0B;&#x8CE6;&#x503C;&#x64CD;&#x4F5C;&#x9700;&#x8981;&#x5F88;&#x8B39;&#x614E;&#x3002;</p>
+<p>&#x907F;&#x514D;&#x76F4;&#x63A5;&#x4F7F;&#x7528;atomic&#x65B9;&#x6CD5;&#x3002;&#x5982;&#x679C;locking&#x8207;unlocking&#x4E4B;&#x9593;&#x6C92;&#x6709;&#x7AF6;&#x722D;&#xFF0C;locking&#x8207;unlocking&#x4E00;&#x500B;pthread mutex &#x5206;&#x5225;&#x9700;&#x8981;&#x4E00;&#x500B;&#x55AE;&#x7368;&#x7684;atomic&#x64CD;&#x4F5C;&#x3002;&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x4E00;&#x500B;lock-free&#x7684;&#x8A2D;&#x8A08;&#xFF0C;&#x4F60;&#x5FC5;&#x9808;&#x5728;&#x958B;&#x59CB;&#x5BEB;&#x4EE3;&#x78BC;&#x4E4B;&#x524D;&#x77AD;&#x89E3;&#x6574;&#x7BC7;&#x6587;&#x6A94;&#x7684;&#x8981;&#x9EDE;&#x3002;&#xFF08;&#x6216;&#x8005;&#x662F;&#x5C0B;&#x627E;&#x4E00;&#x500B;&#x5DF2;&#x7D93;&#x70BA;SMP ARM&#x8A2D;&#x8A08;&#x597D;&#x7684;&#x5EAB;&#x6587;&#x4EF6;&#xFF09;&#x3002;</p>
+<p>Be extremely circumspect with &quot;volatile&#x201D; in C/C++. It often indicates a concurrency problem waiting to happen.</p>
+<p>In Java, the best answer is usually to use an appropriate utility class from the java.util.concurrent package. The code is well written and well tested on SMP.</p>
+<p>Perhaps the safest thing you can do is make your class immutable. Objects from classes like String and Integer hold data that cannot be changed once the class is created, avoiding all synchronization issues. The book Effective Java, 2nd Ed. has specific instructions in &#x201C;Item 15: Minimize Mutability&#x201D;. Note in particular the importance of declaring fields &#x201C;final&quot; (Bloch).</p>
+<p>If neither of these options is viable, the Java &#x201C;synchronized&#x201D; statement should be used to guard any field that can be accessed by more than one thread. If mutexes won&#x2019;t work for your situation, you should declare shared fields &#x201C;volatile&#x201D;, but you must take great care to understand the interactions between threads. The volatile declaration won&#x2019;t save you from common concurrent programming mistakes, but it will help you avoid the mysterious failures associated with optimizing compilers and SMP mishaps.</p>
+<p>The Java Memory Model guarantees that assignments to final fields are visible to all threads once the constructor has finished &#x2014; this is what ensures proper synchronization of fields in immutable classes. This guarantee does not hold if a partially-constructed object is allowed to become visible to other threads. It is necessary to follow safe construction practices.(Safe Construction Techniques in Java).</p>
+<h4 id="2-3-2-synchronization-primitive-guarantees">2.3.2)Synchronization primitive guarantees</h4>
+<p>The pthread library and VM make a couple of useful guarantees: all accesses previously performed by a thread that creates a new thread are observable by that new thread as soon as it starts, and all accesses performed by a thread that is exiting are observable when a join() on that thread returns. This means you don&#x2019;t need any additional synchronization when preparing data for a new thread or examining the results of a joined thread.</p>
+<p>Whether or not these guarantees apply to interactions with pooled threads depends on the thread pool implementation.</p>
+<p>In C/C++, the pthread library guarantees that any accesses made by a thread before it unlocks a mutex will be observable by another thread after it locks that same mutex. It also guarantees that any accesses made before calling signal() or broadcast() on a condition variable will be observable by the woken thread.</p>
+<p>Java language threads and monitors make similar guarantees for the comparable operations.</p>
+<h4 id="2-3-3-upcoming-changes-to-c-c">2.3.3)Upcoming changes to C/C++</h4>
+<p>The C and C++ language standards are evolving to include a sophisticated collection of atomic operations. A full matrix of calls for common data types is defined, with selectable memory barrier semantics (choose from relaxed, consume, acquire, release, acq_rel, seq_cst).</p>
+<p>See the Further Reading section for pointers to the specifications.</p>
+<h2 id="3-closing-notes">3)Closing Notes</h2>
+<p>While this document does more than merely scratch the surface, it doesn&#x2019;t manage more than a shallow gouge. This is a very broad and deep topic. Some areas for further exploration:</p>
+<ul>
+<li>Learn the definitions of <strong>happens-before</strong>, <strong>synchronizes-with</strong>, and other essential concepts from the Java Memory Model. (It&#x2019;s hard to understand what &#x201C;volatile&#x201D; really means without getting into this.)</li>
+<li>Explore what compilers are and aren&#x2019;t allowed to do when reordering code. (The JSR-133 spec has some great examples of legal transformations that lead to unexpected results.)</li>
+<li>Find out how to write immutable classes in Java and C++. (There&#x2019;s more to it than just &#x201C;don&#x2019;t change anything after construction&#x201D;.)</li>
+<li>Internalize the recommendations in the Concurrency section of <strong>Effective Java, 2nd Edition</strong>. (For example, you should avoid calling methods that are meant to be overridden while inside a synchronized block.)</li>
+<li>Understand what sorts of barriers you can use on x86 and ARM. (And other CPUs for that matter, for example Itanium&#x2019;s acquire/release instruction modifiers.)</li>
+<li>Read through the <strong>java.util.concurrent</strong> and <strong>java.util.concurrent.atomic</strong> APIs to see what&apos;s available.</li>
+<li>Consider using concurrency annotations like <code>@ThreadSafe</code> and <code>@GuardedBy</code> (from net.jcip.annotations).</li>
+</ul>
+<p>The Further Reading section in the appendix has links to documents and web sites that will better illuminate these topics.</p>
+<p><a name="appendix"></a></p>
+<h2 id="4-appendix">4)Appendix</h2>
+<h3 id="4-1-smp-failure-example">4.1)SMP failure example</h3>
+<h3 id="4-2-implementing-synchronization-stores">4.2)Implementing synchronization stores</h3>
+<p><a name="more"></a></p>
+<h3 id="4-3-further-reading">4.3)Further reading</h3>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../performance/perf-jni/index.html" class="navigation navigation-prev " aria-label="Previous page: JNI使用指南"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../best-security.html" class="navigation navigation-next " aria-label="Next page: Android安全與隱私"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-disqus/plugin.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-ga/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"disqus":{"shortName":"kesenhoo"},"ga":{"token":"UA-37679268-1","configuration":"auto"}};
+    gitbook.start(config);
+});
+</script>
+
+        <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-37679268-1', 'auto');ga('send', 'pageview');</script>
+    </body>
+    
+</html>
